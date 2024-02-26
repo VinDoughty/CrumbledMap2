@@ -1,0 +1,77 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7bgv101aa7cm"]
+
+[ext_resource type="Texture2D" uid="uid://dmoufkwiqpqlu" path="res://grass.png" id="1"]
+[ext_resource type="PackedScene" uid="uid://ck07ddw077t14" path="res://player stuff/Yinou.tscn" id="2_vhhic"]
+[ext_resource type="PackedScene" uid="uid://b0vrfpcb3b7x1" path="res://Enemy stuff/Grassbug.tscn" id="3_1nmjt"]
+[ext_resource type="PackedScene" uid="uid://dph7hhv1apjy4" path="res://Platform.tscn" id="4_hic2b"]
+[ext_resource type="PackedScene" uid="uid://clslgbmhwwb5h" path="res://chest.tscn" id="5_6dypq"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Grass" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(3564, 1071)
+scale = Vector2(33.6417, 26.7969)
+texture = ExtResource("1")
+
+[node name="Grassbug" parent="." instance=ExtResource("3_1nmjt")]
+position = Vector2(-37, -34)
+
+[node name="Node2D" parent="." instance=ExtResource("4_hic2b")]
+position = Vector2(12, 22)
+scale = Vector2(1.37592, 0.157171)
+
+[node name="Node2D2" parent="." instance=ExtResource("4_hic2b")]
+position = Vector2(36, -20)
+scale = Vector2(0.135917, 2.79717)
+
+[node name="Node2D3" parent="." instance=ExtResource("4_hic2b")]
+position = Vector2(-12, -1.90735e-06)
+scale = Vector2(0.135917, 1.55717)
+
+[node name="Node2D4" parent="." instance=ExtResource("4_hic2b")]
+position = Vector2(-74, 17)
+rotation = -1.54462
+scale = Vector2(2.60483, 0.321251)
+
+[node name="Node2D5" parent="." instance=ExtResource("4_hic2b")]
+position = Vector2(-44, -21)
+scale = Vector2(1.89316, 0.224703)
+
+[node name="Node2D6" parent="." instance=ExtResource("4_hic2b")]
+position = Vector2(-63, -64)
+scale = Vector2(6.08724, 0.437171)
+
+[node name="Node2D7" parent="." instance=ExtResource("4_hic2b")]
+position = Vector2(-157, 21)
+rotation = 1.58196
+scale = Vector2(5.78227, 0.43626)
+
+[node name="Chest" parent="." instance=ExtResource("5_6dypq")]
+position = Vector2(-42, 1)
+scale = Vector2(0.43299, 0.370787)
+
+[node name="Chest" parent="Chest" index="0"]
+scale = Vector2(1.2128, 0.902435)
+
+[node name="Node2D8" parent="." instance=ExtResource("4_hic2b")]
+position = Vector2(4, 109)
+scale = Vector2(10.5174, 0.319827)
+
+[node name="Player" parent="." instance=ExtResource("2_vhhic")]
+position = Vector2(9, 5)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -56.0
+offset_top = 6.0
+offset_right = 119.0
+offset_bottom = 29.0
+scale = Vector2(0.21065, 0.217895)
+text = "Press z to open chests."
+
+[connection signal="area_entered" from="Grassbug/Area2D" to="Player/CharacterBody2D" method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="Chest/ChestArea2D" to="Player/CharacterBody2D" method="_on_chest_area_2d_area_entered"]
+
+[editable path="Grassbug"]
+[editable path="Chest"]
+[editable path="Player"]

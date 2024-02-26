@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<EDIT appVersion="Waveform 11.5.18" projectID="86dbaa/227a2f3" creationTime="1707260029594"
+      lastSignificantChange="18d8133fa85" modifiedBy="Vin">
+  <TRANSPORT endToEnd="1"/>
+  <MACROPARAMETERS id="1001"/>
+  <TEMPOSEQUENCE>
+    <TEMPO startBeat="0.0" bpm="120.0" curve="1.0"/>
+    <TIMESIG numerator="4" denominator="4" startBeat="0.0"/>
+  </TEMPOSEQUENCE>
+  <PITCHSEQUENCE>
+    <PITCH startBeat="0.0" pitch="60"/>
+  </PITCHSEQUENCE>
+  <VIDEO/>
+  <AUTOMAPXML/>
+  <CLICKTRACK level="0.6025595664978027"/>
+  <ID3VORBISMETADATA trackNumber="1" date="2024"/>
+  <MASTERVOLUME>
+    <PLUGIN type="volume" volume="0.6376281380653381" id="1003" enabled="1">
+      <MACROPARAMETERS id="1005"/>
+      <MODIFIERASSIGNMENTS/>
+    </PLUGIN>
+  </MASTERVOLUME>
+  <RACKS/>
+  <MASTERPLUGINS/>
+  <AUXBUSNAMES/>
+  <INPUTDEVICES>
+    <INPUTDEVICE name="AKM320">
+      <INPUTDEVICEDESTINATION targetTrack="1012" targetIndex="0"/>
+    </INPUTDEVICE>
+    <INPUTDEVICE name="Virtual"/>
+    <INPUTDEVICE name="Input 1"/>
+    <INPUTDEVICE name="Input 2"/>
+  </INPUTDEVICES>
+  <TRACKCOMPS/>
+  <ARRANGERTRACK name="Arranger" id="1116">
+    <MACROPARAMETERS id="1118"/>
+    <MODIFIERS/>
+  </ARRANGERTRACK>
+  <TEMPOTRACK name="Global" id="1121">
+    <MACROPARAMETERS id="1123"/>
+    <MODIFIERS/>
+  </TEMPOTRACK>
+  <MARKERTRACK id="1007" name="Marker">
+    <MACROPARAMETERS id="1009"/>
+    <MODIFIERS/>
+  </MARKERTRACK>
+  <CHORDTRACK name="Chord" id="1126">
+    <MACROPARAMETERS id="1128"/>
+    <MODIFIERS/>
+  </CHORDTRACK>
+  <MASTERTRACK name="Master" id="1131">
+    <MACROPARAMETERS id="1133"/>
+    <MODIFIERS/>
+  </MASTERTRACK>
+  <TRACK id="1012" midiVProp="0.28125" midiVOffset="0.359375" colour="ffff0000">
+    <MACROPARAMETERS id="1014"/>
+    <MODIFIERS/>
+    <MIDICLIP name="Track 1 Recording 1" start="0.0" length="6.11700680272109"
+              offset="0.0" id="1140" sync="0" colour="ffff0000" currentTake="0"
+              speed="1.0" volDb="0.0">
+      <QUANTISATION/>
+      <GROOVE/>
+      <SEQUENCE ver="1" channelNumber="1">
+        <NOTE p="62" b="0.627926189408754" l="0.3107743049040437" v="76" c="1"/>
+        <NOTE p="62" b="1.158502968915855" l="0.4313001492992043" v="91" c="1"/>
+        <NOTE p="65" b="1.657063440841739" l="0.4590882575139403" v="75" c="1"/>
+        <NOTE p="62" b="2.22485523573414" l="0.376149826683104" v="61" c="1"/>
+        <NOTE p="62" b="2.733679507349734" l="0.3957242425531149" v="75" c="1"/>
+        <NOTE p="62" b="3.339304116976564" l="0.4075856423005462" v="90" c="1"/>
+        <NOTE p="65" b="3.875944204119151" l="0.4171134424395859" v="64" c="1"/>
+        <NOTE p="62" b="4.435792691496317" l="0.3499290263280272" v="72" c="1"/>
+        <NOTE p="62" b="4.975884178144042" l="0.381968935020268" v="86" c="1"/>
+        <NOTE p="62" b="5.599150495560025" l="0.4338581492193043" v="93" c="1"/>
+        <NOTE p="65" b="6.155413382643019" l="0.4075076417066157" v="81" c="1"/>
+        <NOTE p="62" b="6.725285684646224" l="0.3978525344282389" v="46" c="1"/>
+        <NOTE p="62" b="7.317043186121737" l="0.3739270274527371" v="84" c="1"/>
+        <NOTE p="62" b="7.896774888460641" l="0.3779324269853532" v="91" c="1"/>
+        <NOTE p="65" b="8.377715745897149" l="0.403716241940856" v="78" c="1"/>
+        <NOTE p="62" b="8.929886139885639" l="0.3738928274251521" v="57" c="1"/>
+        <NOTE p="62" b="9.485874534540926" l="0.3918431350030005" v="81" c="1"/>
+        <NOTE p="62" b="10.17439666618884" l="0.4297116426751018" v="83" c="1"/>
+      </SEQUENCE>
+      <PATTERNGENERATOR>
+        <PROGRESSION/>
+      </PATTERNGENERATOR>
+    </MIDICLIP>
+    <PLUGIN type="volume" id="1017" enabled="1">
+      <MACROPARAMETERS id="1018"/>
+      <MODIFIERASSIGNMENTS/>
+    </PLUGIN>
+    <PLUGIN type="level" id="1021" enabled="1">
+      <MACROPARAMETERS id="1022"/>
+    </PLUGIN>
+    <PLUGIN type="vst" uniqueId="0" uid="0" filename="FM Synth" name="FM Synth"
+            manufacturer="Tracktion" windowLocked="1" id="1136" enabled="1"
+            windowX="80" windowY="103" programNum="0" state="829.VMjLgPy....O+fWarAhckI2bo8la8HRLt.iHfTlai8FYo41Y8HRUTYTK3HxO9.BOTM0PDgULv3COPI0SGIUPMARZtQVY30iHvHBHtEVak0iHBIWZmgFcfTDakMFcxk1Xf.UZg41ah7hO7.UPRETSEQUQRARZtQVY30iHvHBH1EFa0UVOh.iKvHxK9vCTAIUPMUDUEIEHo4FYkgWOhDiHfXWXrUWY8HBLtXCM4jSN4jyM1DSM3DCMxDiHu3COPEjTA0TQTUjTfjlajUFd8HhLh.hcgwVck0iHv3BMzDCLv.CLwPSMzLSMyLyLh7hO7.UPRETSEQUQRARZtQVY30iHyHBH1EFa0UVOh.iK3PiLv.CLv.yM1HSNyjCM0HxK9vCTAIUPMUDUEIEHo4FYkgWOhPiHfXWXrUWY8HBLtLiL3jSN4jSN1DCN0LCLxbiHu3COPEjTA0TQTUjTfjlajUFd8HRMh.hcgwVck0iHv3hLy.CLv.CLvPSL2HyLxTSLh7hO7.UPRETSEQUQRARZtQVY30iH1HBH1EFa0UVOh.iK3.CLv.CLvDSL4HCL4HSNh7hO7.UPRETSEQUQRARZtQVY30iH2HBH1EFa0UVOh.iKvTCLv.CLv.CL2PSMvTCNvXiHu3COPEjTA0TQTUjTfjlajUFd8HBNh.hcgwVck0iHv3BNv.CLv.CLwDSNx.SNxjiHu3COPEjTA0TQTUjTfjlajUFd8HRNh.hcgwVck0iHv3BN4jSN4jSN2XSL0fSLzHSLh7hO7.UPRETSEQUQRARZtQVY30iHw.iHfXWXrUWY8HBLt.iHu3COPEjTA0TQTUjTfjlajUFd8HRLwHBH1EFa0UVOh.iK0HxK9vCTAIUPMUDUEIEHo4FYkgWOhDiLh.hcgwVck0iHv3RMh7hO7.UPRETSEQUQRARZtQVY30iHwLiHfXWXrUWY8HBLtPCM1jSN4jSN1jCLvTSM3TiHu3COPEjTA0TQTUjTfjlajUFd8HRLzHBH1EFa0UVOh.iKvHxK9vCTAIUPMUDUEIEHo4FYkgWOhDSMh.hcgwVck0iHv3BMwPCLv.CLvPSMxjSN0LiHu3COuP0TCQDVw.iO.."
+            base64:layout="104.LETVOUEU..P.BjjSPUEUSA..ADfPUME.AHPZtQVY3AP.ED......rEVduUGc.DfBEPVZyElXrUFY..vSUQETUQ0T..P.AHTUSAP.BjlajUFd.DPAA......agk2a0QG.ATPALAhT...">
+      <MACROPARAMETERS id="1137"/>
+      <MODIFIERASSIGNMENTS/>
+    </PLUGIN>
+    <OUTPUTDEVICES>
+      <DEVICE name="(default audio output)"/>
+    </OUTPUTDEVICES>
+  </TRACK>
+  <TRACK id="1025" midiVProp="0.28125" midiVOffset="0.359375" colour="ffffaa00">
+    <MACROPARAMETERS id="1027"/>
+    <MODIFIERS/>
+    <MIDICLIP name="Track 2 Recording 1" start="0.0" length="9.312947845804988"
+              offset="0.0" id="1144" sync="0" colour="ffffaa00" currentTake="0"
+              speed="1.0" volDb="0.0">
+      <QUANTISATION/>
+      <GROOVE/>
+      <SEQUENCE ver="1" channelNumber="1">
+        <NOTE p="79" b="2.627247412856013" l="0.8589527914300561" v="23" c="1"/>
+        <NOTE p="81" b="4.070085306353212" l="0.474938964471221" v="87" c="1"/>
+        <NOTE p="83" b="4.734955038576663" l="1.013076544273645" v="103" c="1"/>
+        <NOTE p="81" b="6.060671995095253" l="0.4971199645660818" v="9" c="1"/>
+        <NOTE p="79" b="6.617049682121069" l="0.6704843319021165" v="70" c="1"/>
+        <NOTE p="81" b="7.99821216070959" l="0.4631028575822711" v="62" c="1"/>
+        <NOTE p="83" b="8.611637970133961" l="0.7441806546412408" v="99" c="1"/>
+        <NOTE p="81" b="9.898094311989189" l="0.4769349647685885" v="74" c="1"/>
+        <NOTE p="79" b="10.39281178422207" l="0.668610024265945" v="84" c="1"/>
+        <NOTE p="81" b="11.53470177313247" l="0.3818903346545994" v="53" c="1"/>
+        <NOTE p="83" b="12.15229158306429" l="2.247959978412837" v="82" c="1"/>
+      </SEQUENCE>
+      <PATTERNGENERATOR>
+        <PROGRESSION/>
+      </PATTERNGENERATOR>
+    </MIDICLIP>
+    <PLUGIN type="volume" id="1030" enabled="1">
+      <MACROPARAMETERS id="1031"/>
+      <MODIFIERASSIGNMENTS/>
+    </PLUGIN>
+    <PLUGIN type="level" id="1034" enabled="1">
+      <MACROPARAMETERS id="1035"/>
+    </PLUGIN>
+    <OUTPUTDEVICES>
+      <DEVICE name="(default audio output)"/>
+    </OUTPUTDEVICES>
+  </TRACK>
+  <TRACK id="1038" midiVProp="0.28125" midiVOffset="0.359375" colour="ffaaff00">
+    <MACROPARAMETERS id="1040"/>
+    <MODIFIERS/>
+    <OUTPUTDEVICES>
+      <DEVICE name="(default audio output)"/>
+    </OUTPUTDEVICES>
+    <PLUGIN type="volume" id="1043" enabled="1">
+      <MACROPARAMETERS id="1044"/>
+      <MODIFIERASSIGNMENTS/>
+    </PLUGIN>
+    <PLUGIN type="level" id="1047" enabled="1">
+      <MACROPARAMETERS id="1048"/>
+    </PLUGIN>
+  </TRACK>
+  <TRACK id="1051" midiVProp="0.28125" midiVOffset="0.359375" colour="ff00ff00">
+    <MACROPARAMETERS id="1053"/>
+    <MODIFIERS/>
+    <OUTPUTDEVICES>
+      <DEVICE name="(default audio output)"/>
+    </OUTPUTDEVICES>
+    <PLUGIN type="volume" id="1056" enabled="1">
+      <MACROPARAMETERS id="1057"/>
+      <MODIFIERASSIGNMENTS/>
+    </PLUGIN>
+    <PLUGIN type="level" id="1060" enabled="1">
+      <MACROPARAMETERS id="1061"/>
+    </PLUGIN>
+  </TRACK>
+  <TRACK id="1064" midiVProp="0.28125" midiVOffset="0.359375" colour="ff00ffaa">
+    <MACROPARAMETERS id="1066"/>
+    <MODIFIERS/>
+    <OUTPUTDEVICES>
+      <DEVICE name="(default audio output)"/>
+    </OUTPUTDEVICES>
+    <PLUGIN type="volume" id="1069" enabled="1">
+      <MACROPARAMETERS id="1070"/>
+      <MODIFIERASSIGNMENTS/>
+    </PLUGIN>
+    <PLUGIN type="level" id="1073" enabled="1">
+      <MACROPARAMETERS id="1074"/>
+    </PLUGIN>
+  </TRACK>
+  <TRACK id="1077" midiVProp="0.28125" midiVOffset="0.359375" colour="ff00aaff">
+    <MACROPARAMETERS id="1079"/>
+    <MODIFIERS/>
+    <OUTPUTDEVICES>
+      <DEVICE name="(default audio output)"/>
+    </OUTPUTDEVICES>
+    <PLUGIN type="volume" id="1082" enabled="1">
+      <MACROPARAMETERS id="1083"/>
+      <MODIFIERASSIGNMENTS/>
+    </PLUGIN>
+    <PLUGIN type="level" id="1086" enabled="1">
+      <MACROPARAMETERS id="1087"/>
+    </PLUGIN>
+  </TRACK>
+  <TRACK id="1090" midiVProp="0.28125" midiVOffset="0.359375" colour="ff0000ff">
+    <MACROPARAMETERS id="1092"/>
+    <MODIFIERS/>
+    <OUTPUTDEVICES>
+      <DEVICE name="(default audio output)"/>
+    </OUTPUTDEVICES>
+    <PLUGIN type="volume" id="1095" enabled="1">
+      <MACROPARAMETERS id="1096"/>
+      <MODIFIERASSIGNMENTS/>
+    </PLUGIN>
+    <PLUGIN type="level" id="1099" enabled="1">
+      <MACROPARAMETERS id="1100"/>
+    </PLUGIN>
+  </TRACK>
+  <TRACK id="1103" midiVProp="0.28125" midiVOffset="0.359375" colour="ffaa00ff">
+    <MACROPARAMETERS id="1105"/>
+    <MODIFIERS/>
+    <OUTPUTDEVICES>
+      <DEVICE name="(default audio output)"/>
+    </OUTPUTDEVICES>
+    <PLUGIN type="volume" id="1108" enabled="1">
+      <MACROPARAMETERS id="1109"/>
+      <MODIFIERASSIGNMENTS/>
+    </PLUGIN>
+    <PLUGIN type="level" id="1112" enabled="1">
+      <MACROPARAMETERS id="1113"/>
+    </PLUGIN>
+  </TRACK>
+  <ARADOCUMENT/>
+  <CONTROLLERMAPPINGS/>
+  <VIEWSTATE minimalTransportBar="1" hiddenClips="" lockedClips="" chordTrackVisible="0"
+             masterTrackVisible="0" arrangerTrackVisible="0" disabledSearchLibraries=""
+             enabledTrackTags="" currentSidePanel="Search"/>
+  <EDITMIXGROUPS/>
+  <AUDIOEDITING/>
+</EDIT>

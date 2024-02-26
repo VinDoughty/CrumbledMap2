@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://cerkhs61sj2o3"]
+
+[ext_resource type="Texture2D" uid="uid://ctsk6h7p1mmg2" path="res://play.png" id="1"]
+[ext_resource type="Script" path="res://Menu stuff/Menu.gd" id="1_5gaep"]
+[ext_resource type="Texture2D" uid="uid://c5rnc0eqdq2ps" path="res://Menu stuff/backround/menu grass.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://b5d2r2npg6x1m" path="res://Menu stuff/Map.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://cil0jwco1rooh" path="res://Menu stuff/2.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://ci7cji0khsvne" path="res://Menu stuff/The crumbled.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://m4ywode5hsdv" path="res://Menu stuff/backround/reveal trans.png" id="6"]
+
+[sub_resource type="Theme" id="Theme_kvaua"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_5gaep")
+
+[node name="MenuGrass" type="Sprite2D" parent="."]
+position = Vector2(93.5, 36.5001)
+scale = Vector2(8.6375, 9.16406)
+texture = ExtResource("2")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="RevealTrans" type="Sprite2D" parent="."]
+position = Vector2(-351, 252)
+scale = Vector2(1.8, 1.49563)
+texture = ExtResource("6")
+
+[node name="TheCrumbled" type="Sprite2D" parent="."]
+position = Vector2(-67.25, -177.5)
+scale = Vector2(2.41042, 1.74219)
+texture = ExtResource("5")
+
+[node name="Map" type="Sprite2D" parent="TheCrumbled"]
+position = Vector2(5.33139, 74)
+scale = Vector2(0.860889, 0.878125)
+texture = ExtResource("3")
+
+[node name="2" type="Sprite2D" parent="TheCrumbled"]
+position = Vector2(44.9092, 179.946)
+scale = Vector2(2.91054, 2.79821)
+texture = ExtResource("4")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 215.0
+offset_top = 155.0
+offset_right = 282.0
+offset_bottom = 209.0
+scale = Vector2(3.31988, 2.34866)
+theme = SubResource("Theme_kvaua")
+icon = ExtResource("1")
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
