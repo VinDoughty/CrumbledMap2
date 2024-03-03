@@ -12,6 +12,7 @@ func _process(_delta):
 	pass
 func _on_area_2d_body_entered(body):
 	if body.find_child("Attack") :
-		health -= 10
+		health -= 20
 		$ProgressBar.value = 100 * health / max_health
-  # Replace with function body.
+	if health <= 0:
+		queue_free()

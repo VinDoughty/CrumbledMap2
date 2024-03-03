@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
-@export var MAX_SPEED =30
+@export var MAX_SPEED = 30
 @export var axis = Vector2.ZERO
 @export var FRICTION = 1200
-@export var ACCELERATION = 1500
+@export var ACCELERATION = 500
 @export var HUNGER = 100
 @export var MAX_HUNGER = 100
 func _physics_process(delta):
@@ -26,7 +26,6 @@ func move(delta):
 		
 	if axis==Vector2.ZERO:
 		apply_friction(FRICTION * delta)
-		
 	else:
 		apply_movement(axis * ACCELERATION)
 	move_and_slide()
@@ -60,18 +59,7 @@ func apply_movement(accel):
 		
 	
 		
+
 		
-func _on_area_2d_area_entered(area):
-	print("hit")
-		
-
-
-func _on_sushi_area_entered(player):
-	print("hit") # Replace with function body.
-
-
-func _on_chest_area_2d_area_entered(area):
-	if is_in_group("Player"): # Replace with function body.
-		print("giv me sumthin")
 		
 

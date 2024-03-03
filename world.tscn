@@ -72,6 +72,11 @@ text = "Press z to open chests."
 
 [node name="Grassbug2" parent="." instance=ExtResource("6_v3bvu")]
 position = Vector2(254, -165)
+collision_layer = 1
+collision_mask = 1
+
+[node name="CollisionShape2D" parent="Grassbug2/Area2D" index="0"]
+position = Vector2(0, -1)
 
 [node name="ProgressBar" parent="Grassbug2" index="5"]
 modulate = Color(0.815686, 0, 0, 1)
