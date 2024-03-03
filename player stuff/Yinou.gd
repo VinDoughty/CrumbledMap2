@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var MAX_SPEED = 30
 @export var axis = Vector2.ZERO
 @export var FRICTION = 1200
-@export var ACCELERATION = 500
+@export var ACCELERATION = 5
 @export var HUNGER = 100
 @export var MAX_HUNGER = 100
 func _physics_process(delta):
@@ -11,10 +11,11 @@ func _physics_process(delta):
 		
 func _process(delta):
 	if HUNGER > 100:
-		HUNGER==100
+		HUNGER = 100
 		
 	if Input.is_action_just_pressed("attack"):
 		$AnimationAttackPlayer.play("hit")
+	
 		
 func get_input_axis():
 	axis.y = int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))
@@ -47,7 +48,6 @@ func apply_movement(accel):
 			$AttackCollider/Attack.flip_h = false
 			$AttackCollider.position.x *= -1
 			$AttackCollider/Attack.position.x *= -1
-
 		
 	if Input.is_action_pressed("ui_left"):
 		if $YinouSheet.flip_h == false:
@@ -55,11 +55,3 @@ func apply_movement(accel):
 			$AttackCollider/Attack.flip_h = true
 			$AttackCollider.position.x *= -1
 			$AttackCollider/Attack.position.x *= -1
-
-		
-	
-		
-
-		
-		
-

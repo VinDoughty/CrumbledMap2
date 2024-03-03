@@ -11,9 +11,10 @@
 
 [node name="Grass" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(3388, 1024)
+position = Vector2(3468, 985)
 scale = Vector2(33.6417, 26.7969)
 texture = ExtResource("1")
+metadata/_edit_lock_ = true
 
 [node name="Grassbug" parent="." instance=ExtResource("3_1nmjt")]
 position = Vector2(-37, -34)
@@ -60,7 +61,10 @@ position = Vector2(4, 109)
 scale = Vector2(10.5174, 0.319827)
 
 [node name="Player" parent="." instance=ExtResource("2_vhhic")]
-position = Vector2(9, 5)
+position = Vector2(-132, -41)
+
+[node name="CharacterBody2D" parent="Player" index="0"]
+metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="."]
 offset_left = -56.0

@@ -102,7 +102,34 @@ libraries = {
 "": SubResource("AnimationLibrary_c26su")
 }
 
+[node name="AnimationAttackPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_w417y")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0.692766, 1.87747)
+scale = Vector2(1, 1.77246)
+shape = SubResource("RectangleShape2D_rwii4")
+debug_color = Color(0.996078, 0, 0.152941, 0.419608)
+
+[node name="AttackCollider" type="CollisionShape2D" parent="CharacterBody2D" groups=["attack"]]
+position = Vector2(21.989, 2.414)
+shape = SubResource("RectangleShape2D_e8mm3")
+disabled = true
+debug_color = Color(0.423529, 0.603922, 0, 0.419608)
+
+[node name="Attack" type="Sprite2D" parent="CharacterBody2D/AttackCollider"]
+position = Vector2(-5.4972, 2.41394)
+rotation = 3.14159
+scale = Vector2(0.869056, -0.84317)
+texture = ExtResource("5_3la2l")
+hframes = 11
+frame = 10
+
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+scale = Vector2(1, 1)
 zoom = Vector2(10, 10)
 
 [node name="ProgressBar" type="ProgressBar" parent="CharacterBody2D/Camera2D"]
@@ -136,29 +163,3 @@ texture_filter = 1
 position = Vector2(62.7593, 14.1152)
 scale = Vector2(0.496374, 0.61629)
 texture = ExtResource("4_iwnrh")
-
-[node name="AnimationAttackPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
-root_node = NodePath("../..")
-libraries = {
-"": SubResource("AnimationLibrary_w417y")
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(0.692766, 1.87747)
-scale = Vector2(1, 1.77246)
-shape = SubResource("RectangleShape2D_rwii4")
-debug_color = Color(0.996078, 0, 0.152941, 0.419608)
-
-[node name="AttackCollider" type="CollisionShape2D" parent="CharacterBody2D" groups=["attack"]]
-position = Vector2(21.989, 2.414)
-shape = SubResource("RectangleShape2D_e8mm3")
-disabled = true
-debug_color = Color(0.423529, 0.603922, 0, 0.419608)
-
-[node name="Attack" type="Sprite2D" parent="CharacterBody2D/AttackCollider"]
-position = Vector2(-5.4972, 2.41394)
-rotation = 3.14159
-scale = Vector2(0.869056, -0.84317)
-texture = ExtResource("5_3la2l")
-hframes = 11
-frame = 10
