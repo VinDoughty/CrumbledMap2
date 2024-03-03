@@ -3,11 +3,11 @@ extends CharacterBody2D
 @export var MAX_SPEED = 30
 @export var axis = Vector2.ZERO
 @export var FRICTION = 1200
-@export var ACCELERATION = 5
+@export var ACCELERATION = 500
 @export var HUNGER = 100
 @export var MAX_HUNGER = 100
 func _physics_process(delta):
-	move(delta)
+	move_and_slide()
 		
 func _process(delta):
 	if HUNGER > 100:
@@ -16,7 +16,10 @@ func _process(delta):
 	if Input.is_action_just_pressed("attack"):
 		$AnimationAttackPlayer.play("hit")
 	
-		
+	
+	move(delta)	
+	
+	
 func get_input_axis():
 	axis.y = int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))
 	axis.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
@@ -29,8 +32,6 @@ func move(delta):
 		apply_friction(FRICTION * delta)
 	else:
 		apply_movement(axis * ACCELERATION)
-	move_and_slide()
-	
 func apply_friction(amount):
 	if velocity.length() > amount:
 		velocity -= velocity.normalized() * amount
