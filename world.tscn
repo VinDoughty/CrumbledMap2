@@ -1,16 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://c7bgv101aa7cm"]
+[gd_scene load_steps=7 format=3 uid="uid://c7bgv101aa7cm"]
 
 [ext_resource type="Texture2D" uid="uid://dmoufkwiqpqlu" path="res://grass.png" id="1"]
 [ext_resource type="PackedScene" uid="uid://ck07ddw077t14" path="res://player stuff/Yinou.tscn" id="2_vhhic"]
 [ext_resource type="PackedScene" uid="uid://b0vrfpcb3b7x1" path="res://Enemy stuff/Grassbug.tscn" id="3_1nmjt"]
 [ext_resource type="PackedScene" uid="uid://dph7hhv1apjy4" path="res://Platform.tscn" id="4_hic2b"]
 [ext_resource type="PackedScene" uid="uid://clslgbmhwwb5h" path="res://chest.tscn" id="5_6dypq"]
+[ext_resource type="PackedScene" uid="uid://bnn84jd04p2m" path="res://1st_boss.tscn" id="6_v3bvu"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Grass" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(3564, 1071)
+position = Vector2(3388, 1024)
 scale = Vector2(33.6417, 26.7969)
 texture = ExtResource("1")
 
@@ -69,9 +70,18 @@ offset_bottom = 29.0
 scale = Vector2(0.21065, 0.217895)
 text = "Press z to open chests."
 
+[node name="Grassbug2" parent="." instance=ExtResource("6_v3bvu")]
+position = Vector2(254, -165)
+
+[node name="ProgressBar" parent="Grassbug2" index="5"]
+modulate = Color(0.815686, 0, 0, 1)
+self_modulate = Color(0.960784, 0, 0, 1)
+custom_minimum_size = Vector2(0, 0)
+
 [connection signal="area_entered" from="Grassbug/Area2D" to="Player/CharacterBody2D" method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="Chest/ChestArea2D" to="Player/CharacterBody2D" method="_on_chest_area_2d_area_entered"]
 
 [editable path="Grassbug"]
 [editable path="Chest"]
 [editable path="Player"]
+[editable path="Grassbug2"]

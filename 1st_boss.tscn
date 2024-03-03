@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnn84jd04p2m"]
+
+[ext_resource type="PackedScene" uid="uid://b0vrfpcb3b7x1" path="res://Enemy stuff/Grassbug.tscn" id="1_daytl"]
+[ext_resource type="Texture2D" uid="uid://g4exb8f0evxa" path="res://test.png" id="2_bmmlp"]
+[ext_resource type="Texture2D" uid="uid://b3ahncr0jphn4" path="res://boss.png" id="2_xk01u"]
+
+[sub_resource type="Theme" id="Theme_2c86g"]
+
+[node name="Grassbug" instance=ExtResource("1_daytl")]
+scale = Vector2(1.804, 1.698)
+
+[node name="Test2" type="Sprite2D" parent="Area2D" index="1"]
+position = Vector2(-3.27162, -20.318)
+scale = Vector2(15.7711, 1.66863)
+texture = ExtResource("2_bmmlp")
+
+[node name="ProgressBar2" type="ProgressBar" parent="." index="2"]
+modulate = Color(1, 0, 0.301961, 1)
+self_modulate = Color(0.784314, 0, 0, 1)
+visibility_layer = 4
+offset_left = 19.4013
+offset_top = -27.0907
+offset_right = 73.4013
+offset_bottom = -0.0906982
+scale = Vector2(-1.01177, 0.280529)
+theme = SubResource("Theme_2c86g")
+value = 100.0
+fill_mode = 1
+show_percentage = false
+
+[node name="Boss" type="Sprite2D" parent="." index="3"]
+texture_filter = 1
+position = Vector2(27.1619, -22.9682)
+scale = Vector2(0.309451, 0.332818)
+texture = ExtResource("2_xk01u")
+
+[node name="Label" type="Label" parent="." index="4"]
+offset_left = -29.9335
+offset_top = -28.2686
+offset_right = 89.0665
+offset_bottom = -5.26855
+scale = Vector2(0.404819, 0.341637)
+text = "Giant Grassbug"
+
+[node name="ProgressBar" parent="." index="5"]
+visible = false
+offset_left = 49.3348
+offset_top = -45.3475
+offset_right = 99.3348
+offset_bottom = -18.3475
+rotation = 2.72687

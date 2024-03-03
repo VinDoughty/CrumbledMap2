@@ -12,12 +12,15 @@ func _physics_process(delta):
 func _process(delta):
 	if HUNGER > 100:
 		HUNGER==100
-	if Input.is_action_just_pressed("ui_accept"):
-		print("oww your hitting me")
+		
+	if Input.is_action_just_pressed("attack"):
+		$AnimationAttackPlayer.play("hit")
+		
 func get_input_axis():
 	axis.y = int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))
 	axis.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
 	return axis.normalized()
+
 func move(delta):
 	get_input_axis()
 		
@@ -40,10 +43,23 @@ func apply_movement(accel):
 	velocity = velocity.limit_length(MAX_SPEED)
 	
 	if Input.is_action_pressed("ui_right"):
-		$YinouSheet.flip_h = false
+		if $YinouSheet.flip_h == true:
+			$YinouSheet.flip_h = false
+			$AttackCollider/Attack.flip_h = false
+			$AttackCollider.position.x *= -1
+			$AttackCollider/Attack.position.x *= -1
+
 		
 	if Input.is_action_pressed("ui_left"):
-		$YinouSheet.flip_h = true
+		if $YinouSheet.flip_h == false:
+			$YinouSheet.flip_h = true
+			$AttackCollider/Attack.flip_h = true
+			$AttackCollider.position.x *= -1
+			$AttackCollider/Attack.position.x *= -1
+
+		
+	
+		
 		
 func _on_area_2d_area_entered(area):
 	print("hit")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://ck07ddw077t14"]
+[gd_scene load_steps=13 format=3 uid="uid://ck07ddw077t14"]
 
 [ext_resource type="Texture2D" uid="uid://dvwqmt5gam3s2" path="res://player stuff/yinou sheet.png" id="1"]
 [ext_resource type="Script" path="res://player stuff/Yinou.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://bm7leb73ong83" path="res://heart.png" id="3_hul3j"]
 [ext_resource type="Texture2D" uid="uid://cinh8dwww5bpx" path="res://apple.png" id="4_iwnrh"]
+[ext_resource type="Texture2D" uid="uid://b8lfyn1almnvc" path="res://attack.png" id="5_3la2l"]
 
 [sub_resource type="Animation" id="1"]
 resource_name = "norm"
@@ -41,10 +42,47 @@ _data = {
 "up": SubResource("2")
 }
 
+[sub_resource type="Animation" id="Animation_n0c7b"]
+resource_name = "hit"
+length = 1.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterBody2D/AttackCollider/Attack:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CharacterBody2D/AttackCollider:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.3, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w417y"]
+_data = {
+"hit": SubResource("Animation_n0c7b")
+}
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rwii4"]
-size = Vector2(19.6201, 5.23328)
+size = Vector2(19.6201, 20.2144)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e8mm3"]
+size = Vector2(14.8687, 17.2418)
 
 [node name="Player" type="Node2D"]
+texture_filter = 1
 scale = Vector2(0.363822, 0.349291)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["Player"]]
@@ -54,6 +92,7 @@ script = ExtResource("2")
 
 [node name="YinouSheet" type="Sprite2D" parent="CharacterBody2D"]
 texture_filter = 1
+position = Vector2(2.25702, -1.55343)
 texture = ExtResource("1")
 hframes = 2
 
@@ -63,14 +102,7 @@ libraries = {
 "": SubResource("AnimationLibrary_c26su")
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(-1.56425, 16.7076)
-scale = Vector2(1, 1.77246)
-shape = SubResource("RectangleShape2D_rwii4")
-debug_color = Color(0.996078, 0, 0.152941, 0.419608)
-
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-scale = Vector2(1, 1)
 zoom = Vector2(10, 10)
 
 [node name="ProgressBar" type="ProgressBar" parent="CharacterBody2D/Camera2D"]
@@ -104,3 +136,30 @@ texture_filter = 1
 position = Vector2(62.7593, 14.1152)
 scale = Vector2(0.496374, 0.61629)
 texture = ExtResource("4_iwnrh")
+
+[node name="AnimationAttackPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_w417y")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0.692766, 1.87747)
+scale = Vector2(1, 1.77246)
+shape = SubResource("RectangleShape2D_rwii4")
+debug_color = Color(0.996078, 0, 0.152941, 0.419608)
+
+[node name="AttackCollider" type="CollisionShape2D" parent="CharacterBody2D" groups=["attack"]]
+position = Vector2(21.989, 2.414)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_e8mm3")
+disabled = true
+debug_color = Color(0.423529, 0.603922, 0, 0.419608)
+
+[node name="Attack" type="Sprite2D" parent="CharacterBody2D/AttackCollider"]
+position = Vector2(-5.4972, 2.41394)
+rotation = 3.14159
+scale = Vector2(0.869056, -0.84317)
+texture = ExtResource("5_3la2l")
+hframes = 11
+frame = 10

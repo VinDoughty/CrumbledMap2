@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0vrfpcb3b7x1"]
+[gd_scene load_steps=5 format=3 uid="uid://b0vrfpcb3b7x1"]
 
 [ext_resource type="Texture2D" uid="uid://c7a2reou43b83" path="res://Enemy stuff/GRASSBUG.png" id="1_1lybu"]
 [ext_resource type="Script" path="res://Enemy stuff/Enemy.gd" id="1_1wthr"]
+[ext_resource type="Texture2D" uid="uid://g4exb8f0evxa" path="res://test.png" id="3_qe4s4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7w1bf"]
 size = Vector2(17, 15)
@@ -20,3 +21,20 @@ collision_layer = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_7w1bf")
+
+[node name="Test" type="Sprite2D" parent="Area2D"]
+position = Vector2(-1, -22.9775)
+scale = Vector2(18.9891, 2.54547)
+texture = ExtResource("3_qe4s4")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+modulate = Color(0, 0.745098, 0.352941, 1)
+custom_minimum_size = Vector2(50, 0)
+offset_left = -36.9781
+offset_top = -30.6821
+offset_right = 13.0219
+offset_bottom = -3.68209
+scale = Vector2(1.46266, 0.595397)
+value = 100.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
