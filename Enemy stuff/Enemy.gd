@@ -9,10 +9,5 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	pass
-func _on_area_2d_body_entered(body):
-	if body.find_child("Attack") :
-		health -= 20
-		$ProgressBar.value = 100 * health / max_health
-	if health <= 0:
-		queue_free()
+	$ProgressBar.value = 100 * health / max_health
+

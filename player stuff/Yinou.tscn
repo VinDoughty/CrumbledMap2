@@ -48,7 +48,7 @@ length = 1.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CharacterBody2D/AttackCollider/Attack:frame")
+tracks/0/path = NodePath("CharacterBody2D/Area2D/AttackCollider/Attack:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -60,7 +60,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CharacterBody2D/AttackCollider:disabled")
+tracks/1/path = NodePath("CharacterBody2D/Area2D/AttackCollider:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -114,22 +114,7 @@ scale = Vector2(1, 1.77246)
 shape = SubResource("RectangleShape2D_rwii4")
 debug_color = Color(0.996078, 0, 0.152941, 0.419608)
 
-[node name="AttackCollider" type="CollisionShape2D" parent="CharacterBody2D" groups=["attack"]]
-position = Vector2(21.989, 2.414)
-shape = SubResource("RectangleShape2D_e8mm3")
-disabled = true
-debug_color = Color(0.423529, 0.603922, 0, 0.419608)
-
-[node name="Attack" type="Sprite2D" parent="CharacterBody2D/AttackCollider"]
-position = Vector2(-5.4972, 2.41394)
-rotation = 3.14159
-scale = Vector2(0.869056, -0.84317)
-texture = ExtResource("5_3la2l")
-hframes = 11
-frame = 10
-
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-scale = Vector2(1, 1)
 zoom = Vector2(10, 10)
 
 [node name="ProgressBar" type="ProgressBar" parent="CharacterBody2D/Camera2D"]
@@ -163,3 +148,24 @@ texture_filter = 1
 position = Vector2(62.7593, 14.1152)
 scale = Vector2(0.496374, 0.61629)
 texture = ExtResource("4_iwnrh")
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="AttackCollider" type="CollisionShape2D" parent="CharacterBody2D/Area2D" groups=["attack"]]
+position = Vector2(16.4916, 2.41395)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_e8mm3")
+disabled = true
+debug_color = Color(0.423529, 0.603922, 0, 0.419608)
+
+[node name="Attack" type="Sprite2D" parent="CharacterBody2D/Area2D/AttackCollider"]
+position = Vector2(-5.4972, 2.41394)
+rotation = 3.14159
+scale = Vector2(0.869056, -0.84317)
+texture = ExtResource("5_3la2l")
+hframes = 11
+frame = 10
+
+[connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]

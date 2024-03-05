@@ -46,13 +46,22 @@ func apply_movement(accel):
 	if Input.is_action_pressed("ui_right"):
 		if $YinouSheet.flip_h == true:
 			$YinouSheet.flip_h = false
-			$AttackCollider/Attack.flip_h = false
-			$AttackCollider.position.x *= -1
-			$AttackCollider/Attack.position.x *= -1
+			$Area2D/AttackCollider/Attack.flip_h = false
+			$Area2D/AttackCollider.position.x *= -1
+			$Area2D/AttackCollider/Attack.position.x *= -1
 		
 	if Input.is_action_pressed("ui_left"):
 		if $YinouSheet.flip_h == false:
 			$YinouSheet.flip_h = true
-			$AttackCollider/Attack.flip_h = true
-			$AttackCollider.position.x *= -1
-			$AttackCollider/Attack.position.x *= -1
+			$Area2D/AttackCollider/Attack.flip_h = true
+			$Area2D/AttackCollider.position.x *= -1
+			$Area2D/AttackCollider/Attack.position.x *= -1
+
+
+
+
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("enemy"):
+		body.health -= 20
+		if body.health <= 0:
+			body.queue_free()
