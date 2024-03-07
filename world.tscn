@@ -61,7 +61,7 @@ position = Vector2(4, 109)
 scale = Vector2(10.5174, 0.319827)
 
 [node name="Player" parent="." instance=ExtResource("2_vhhic")]
-position = Vector2(-132, -41)
+position = Vector2(12, 3)
 
 [node name="CharacterBody2D" parent="Player" index="0"]
 metadata/_edit_lock_ = true

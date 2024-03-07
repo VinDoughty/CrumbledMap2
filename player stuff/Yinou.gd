@@ -12,6 +12,10 @@ func _physics_process(delta):
 func _process(delta):
 	if HUNGER > 100:
 		HUNGER = 100
+	$Camera2D/HungerBar.value = HUNGER * 100 / MAX_HUNGER
+	if $Camera2D/HungerBar.value == 0:
+		get_tree().reload_current_scene()
+		queue_free()
 		
 	if Input.is_action_just_pressed("attack"):
 		$AnimationAttackPlayer.play("hit")
@@ -65,3 +69,9 @@ func _on_area_2d_body_entered(body):
 		body.health -= 20
 		if body.health <= 0:
 			body.queue_free()
+
+
+func _on_timer_timeout():
+	HUNGER -= 25
+	print(HUNGER)
+	 # Replace with function body.
