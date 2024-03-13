@@ -10,7 +10,7 @@ func _physics_process(delta):
 	move_and_slide()
 		
 func _process(delta):
-	if HUNGER > 100:
+	if HUNGER > MAX_HUNGER:
 		HUNGER = 100
 	$Camera2D/HungerBar.value = HUNGER * 100 / MAX_HUNGER
 	if $Camera2D/HungerBar.value == 0:
@@ -72,6 +72,6 @@ func _on_area_2d_body_entered(body):
 
 
 func _on_timer_timeout():
-	HUNGER -= 25
+	HUNGER -= 3
 	print(HUNGER)
 	 # Replace with function body.

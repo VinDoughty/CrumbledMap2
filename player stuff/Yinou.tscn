@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://ck07ddw077t14"]
+[gd_scene load_steps=14 format=3 uid="uid://ck07ddw077t14"]
 
 [ext_resource type="Texture2D" uid="uid://dvwqmt5gam3s2" path="res://player stuff/yinou sheet.png" id="1"]
 [ext_resource type="Script" path="res://player stuff/Yinou.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://bm7leb73ong83" path="res://heart.png" id="3_hul3j"]
 [ext_resource type="Texture2D" uid="uid://cinh8dwww5bpx" path="res://apple.png" id="4_iwnrh"]
 [ext_resource type="Texture2D" uid="uid://b8lfyn1almnvc" path="res://attack.png" id="5_3la2l"]
+[ext_resource type="Texture2D" uid="uid://bb8ccos2duclk" path="res://fish_cooked.png" id="6_kpw0n"]
 
 [sub_resource type="Animation" id="1"]
 resource_name = "norm"
@@ -64,7 +65,7 @@ tracks/1/path = NodePath("CharacterBody2D/Area2D/AttackCollider:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.1, 0.3, 0.8),
+"times": PackedFloat32Array(0, 0.3, 0.8),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [true, false, true]
@@ -170,6 +171,12 @@ frame = 10
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
+
+[node name="FishCooked" type="Sprite2D" parent="."]
+position = Vector2(-108.832, -74.4365)
+scale = Vector2(0.91229, 1)
+texture = ExtResource("6_kpw0n")
+hframes = 5
 
 [connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="CharacterBody2D" method="_on_timer_timeout"]

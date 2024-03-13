@@ -79,15 +79,11 @@ position = Vector2(254, -165)
 collision_layer = 1
 collision_mask = 1
 
-[node name="CollisionShape2D" parent="Grassbug2/Area2D" index="0"]
-position = Vector2(0, -1)
-
-[node name="ProgressBar" parent="Grassbug2" index="5"]
+[node name="ProgressBar" parent="Grassbug2" index="6"]
 modulate = Color(0.815686, 0, 0, 1)
 self_modulate = Color(0.960784, 0, 0, 1)
 custom_minimum_size = Vector2(0, 0)
 
-[connection signal="area_entered" from="Grassbug/Area2D" to="Player/CharacterBody2D" method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="Chest/ChestArea2D" to="Player/CharacterBody2D" method="_on_chest_area_2d_area_entered"]
 
 [editable path="Grassbug"]

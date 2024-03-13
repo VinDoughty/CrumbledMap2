@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b0vrfpcb3b7x1"]
+[gd_scene load_steps=5 format=3 uid="uid://b0vrfpcb3b7x1"]
 
 [ext_resource type="Texture2D" uid="uid://c7a2reou43b83" path="res://Enemy stuff/GRASSBUG.png" id="1_1lybu"]
 [ext_resource type="Script" path="res://Enemy stuff/Enemy.gd" id="1_1wthr"]
@@ -6,8 +6,6 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7w1bf"]
 size = Vector2(22.7558, 24.5457)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c8b15"]
 
 [node name="Grassbug" type="CharacterBody2D" groups=["enemy"]]
 scale = Vector2(0.351559, 0.325923)
@@ -19,14 +17,7 @@ script = ExtResource("1_1wthr")
 texture_filter = 1
 texture = ExtResource("1_1lybu")
 
-[node name="Area2D" type="Area2D" parent="."]
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-3.39088e-07, 5.48639e-07)
-shape = SubResource("RectangleShape2D_7w1bf")
-
-[node name="Test" type="Sprite2D" parent="Area2D"]
+[node name="Test" type="Sprite2D" parent="."]
 position = Vector2(-1, -22.9775)
 scale = Vector2(18.9891, 2.54547)
 texture = ExtResource("3_qe4s4")
@@ -42,4 +33,5 @@ scale = Vector2(1.46266, 0.595397)
 value = 100.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_c8b15")
+position = Vector2(-1.69544e-07, 0)
+shape = SubResource("RectangleShape2D_7w1bf")

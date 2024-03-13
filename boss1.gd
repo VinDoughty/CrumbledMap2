@@ -1,7 +1,4 @@
-extends Node2D
-class_name Enemy
-var health:float = 100
-var max_health:float = 100
+extends Enemy
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -10,6 +7,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	$ProgressBar.value =  (health / max_health) * 100
+	$ProgressBar2.value = 100 * health / max_health
 
 
