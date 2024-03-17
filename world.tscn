@@ -61,10 +61,7 @@ position = Vector2(4, 109)
 scale = Vector2(10.5174, 0.319827)
 
 [node name="Player" parent="." instance=ExtResource("2_vhhic")]
-position = Vector2(12, 3)
-
-[node name="CharacterBody2D" parent="Player" index="0"]
-metadata/_edit_lock_ = true
+position = Vector2(9, 2)
 
 [node name="Label" type="Label" parent="."]
 offset_left = -56.0
@@ -79,14 +76,16 @@ position = Vector2(254, -165)
 collision_layer = 1
 collision_mask = 1
 
-[node name="ProgressBar" parent="Grassbug2" index="6"]
+[node name="ProgressBar" parent="Grassbug2" index="4"]
 modulate = Color(0.815686, 0, 0, 1)
 self_modulate = Color(0.960784, 0, 0, 1)
 custom_minimum_size = Vector2(0, 0)
+
+[node name="Grassbug3" parent="." instance=ExtResource("3_1nmjt")]
+position = Vector2(-131, 42)
 
 [connection signal="area_entered" from="Chest/ChestArea2D" to="Player/CharacterBody2D" method="_on_chest_area_2d_area_entered"]
 
 [editable path="Grassbug"]
 [editable path="Chest"]
-[editable path="Player"]
 [editable path="Grassbug2"]

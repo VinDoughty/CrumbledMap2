@@ -1,0 +1,56 @@
+{ "frames": {
+   "list 0.ase": {
+    "frame": { "x": 0, "y": 0, "w": 480, "h": 256 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 480, "h": 256 },
+    "sourceSize": { "w": 480, "h": 256 },
+    "duration": 100
+   },
+   "list 1.ase": {
+    "frame": { "x": 480, "y": 0, "w": 480, "h": 256 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 480, "h": 256 },
+    "sourceSize": { "w": 480, "h": 256 },
+    "duration": 100
+   },
+   "list 2.ase": {
+    "frame": { "x": 960, "y": 0, "w": 480, "h": 256 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 480, "h": 256 },
+    "sourceSize": { "w": 480, "h": 256 },
+    "duration": 100
+   },
+   "list 3.ase": {
+    "frame": { "x": 1440, "y": 0, "w": 480, "h": 256 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 480, "h": 256 },
+    "sourceSize": { "w": 480, "h": 256 },
+    "duration": 100
+   },
+   "list 4.ase": {
+    "frame": { "x": 1920, "y": 0, "w": 480, "h": 256 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 480, "h": 256 },
+    "sourceSize": { "w": 480, "h": 256 },
+    "duration": 100
+   }
+ },
+ "meta": {
+  "app": "https://github.com/LibreSprite/LibreSprite/",
+  "version": "1.1-dev",
+  "image": "C:\\Users\\vindo\\OneDrive\\Documents\\GitHub\\CrumbledMap2\\list.png",
+  "format": "RGBA8888",
+  "size": { "w": 2400, "h": 256 },
+  "scale": "1",
+  "frameTags": [
+  ],
+  "layers": [
+   { "name": "Layer 1", "opacity": 255, "blendMode": "normal" }
+  ]
+ }
+}

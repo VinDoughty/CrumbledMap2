@@ -16,27 +16,7 @@ position = Vector2(-3.27162, -20.318)
 scale = Vector2(15.7711, 1.66863)
 texture = ExtResource("2_bmmlp")
 
-[node name="ProgressBar2" type="ProgressBar" parent="." index="2"]
-modulate = Color(1, 0, 0.301961, 1)
-self_modulate = Color(0.784314, 0, 0, 1)
-visibility_layer = 4
-offset_left = 19.4013
-offset_top = -27.0907
-offset_right = 73.4013
-offset_bottom = -0.0906982
-scale = Vector2(-1.01177, 0.280529)
-theme = SubResource("Theme_2c86g")
-value = 100.0
-fill_mode = 1
-show_percentage = false
-
-[node name="Boss" type="Sprite2D" parent="." index="3"]
-texture_filter = 1
-position = Vector2(27.1619, -22.9682)
-scale = Vector2(0.309451, 0.332818)
-texture = ExtResource("2_xk01u")
-
-[node name="Label" type="Label" parent="." index="4"]
+[node name="Label" type="Label" parent="." index="2"]
 offset_left = -29.9335
 offset_top = -28.2686
 offset_right = 89.0665
@@ -44,10 +24,32 @@ offset_bottom = -5.26855
 scale = Vector2(0.404819, 0.341637)
 text = "Giant Grassbug"
 
-[node name="ProgressBar" parent="." index="6"]
+[node name="ProgressBar" parent="." index="4"]
 visible = false
 offset_left = 49.3348
 offset_top = -45.3475
 offset_right = 99.3348
 offset_bottom = -18.3475
 rotation = 2.72687
+
+[node name="ProgressBar2" type="ProgressBar" parent="." index="6"]
+modulate = Color(1, 0, 0.301961, 1)
+self_modulate = Color(0.784314, 0, 0, 1)
+visibility_layer = 4
+offset_left = -131.929
+offset_top = -44.7585
+offset_right = -127.929
+offset_bottom = -17.7585
+rotation = -6.28319
+scale = Vector2(111.919, 1.07714)
+theme = SubResource("Theme_2c86g")
+step = 100.0
+value = 100.0
+fill_mode = 1
+show_percentage = false
+
+[node name="Boss" type="Sprite2D" parent="." index="7"]
+texture_filter = 1
+position = Vector2(27.1619, -22.9682)
+scale = Vector2(0.310696, 0.328364)
+texture = ExtResource("2_xk01u")

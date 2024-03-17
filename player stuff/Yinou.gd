@@ -6,6 +6,8 @@ extends CharacterBody2D
 @export var ACCELERATION = 500
 @export var HUNGER = 100
 @export var MAX_HUNGER = 100
+var List_interact = []
+
 func _physics_process(delta):
 	move_and_slide()
 		
@@ -19,7 +21,11 @@ func _process(delta):
 		
 	if Input.is_action_just_pressed("attack"):
 		$AnimationAttackPlayer.play("hit")
+	if Input.is_action_pressed("inventory"):
+		$Camera2D/Inventory.visible = true
 	
+	if Input.is_action_pressed("exit inventory"):
+		$Camera2D/Inventory.visible = false
 	
 	move(delta)	
 	
@@ -75,3 +81,17 @@ func _on_timer_timeout():
 	HUNGER -= 3
 	print(HUNGER)
 	 # Replace with function body.
+
+
+func _on_interact_area_2d_area_entered(area):
+		if area.get_parent().has_method("interact"):
+			List_interact.append(area.get_parent())
+			for n in List_interact:
+				n.interact($Camera2D/Inventory)
+
+
+func _on_interact_area_2d_area_exited(area):
+	if area.is_in_group("chest"):
+		List_interact.remove_at(List_interact.find(area))
+		
+

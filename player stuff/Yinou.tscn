@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ck07ddw077t14"]
+[gd_scene load_steps=16 format=3 uid="uid://ck07ddw077t14"]
 
 [ext_resource type="Texture2D" uid="uid://dvwqmt5gam3s2" path="res://player stuff/yinou sheet.png" id="1"]
 [ext_resource type="Script" path="res://player stuff/Yinou.gd" id="2"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cinh8dwww5bpx" path="res://apple.png" id="4_iwnrh"]
 [ext_resource type="Texture2D" uid="uid://b8lfyn1almnvc" path="res://attack.png" id="5_3la2l"]
 [ext_resource type="Texture2D" uid="uid://bb8ccos2duclk" path="res://fish_cooked.png" id="6_kpw0n"]
+[ext_resource type="PackedScene" uid="uid://dqqo81egls7ty" path="res://iventory.tscn" id="7_wya43"]
 
 [sub_resource type="Animation" id="1"]
 resource_name = "norm"
@@ -82,6 +83,9 @@ size = Vector2(19.6201, 20.2144)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e8mm3"]
 size = Vector2(14.8687, 17.2418)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_gnge2"]
+radius = 9.84365
+
 [node name="Player" type="Node2D"]
 texture_filter = 1
 scale = Vector2(0.363822, 0.349291)
@@ -150,6 +154,12 @@ position = Vector2(62.7593, 14.1152)
 scale = Vector2(0.496374, 0.61629)
 texture = ExtResource("4_iwnrh")
 
+[node name="Inventory" parent="CharacterBody2D/Camera2D" instance=ExtResource("7_wya43")]
+visible = false
+z_index = 3
+position = Vector2(-2.74857, -16.8976)
+scale = Vector2(0.19, 0.160202)
+
 [node name="Area2D" type="Area2D" parent="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 2
@@ -168,15 +178,28 @@ texture = ExtResource("5_3la2l")
 hframes = 11
 frame = 10
 
+[node name="FishCooked" type="Sprite2D" parent="CharacterBody2D"]
+visible = false
+position = Vector2(-108.832, -62.7626)
+scale = Vector2(0.91229, 0.84317)
+texture = ExtResource("6_kpw0n")
+hframes = 5
+
+[node name="InteractArea2D" type="Area2D" parent="CharacterBody2D"]
+scale = Vector2(1, 0.84317)
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/InteractArea2D"]
+scale = Vector2(1.55668, 2.86992)
+shape = SubResource("CircleShape2D_gnge2")
+debug_color = Color(0, 0.643137, 0.32549, 0.419608)
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
 
-[node name="FishCooked" type="Sprite2D" parent="."]
-position = Vector2(-108.832, -74.4365)
-scale = Vector2(0.91229, 1)
-texture = ExtResource("6_kpw0n")
-hframes = 5
-
 [connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]
+[connection signal="area_entered" from="CharacterBody2D/InteractArea2D" to="CharacterBody2D" method="_on_interact_area_2d_area_entered"]
+[connection signal="area_exited" from="CharacterBody2D/InteractArea2D" to="CharacterBody2D" method="_on_interact_area_2d_area_exited"]
 [connection signal="timeout" from="Timer" to="CharacterBody2D" method="_on_timer_timeout"]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://dqqo81egls7ty"]
+[gd_scene load_steps=13 format=3 uid="uid://dqqo81egls7ty"]
 
 [ext_resource type="Script" path="res://iventory.gd" id="1_1r22b"]
 [ext_resource type="Texture2D" uid="uid://g4exb8f0evxa" path="res://test.png" id="1_vsmjq"]
 [ext_resource type="Texture2D" uid="uid://cqoyxx0xgnthj" path="res://new inventory.png" id="2_apqh6"]
 [ext_resource type="Texture2D" uid="uid://banxt2faio4id" path="res://list.png" id="3_aq36e"]
 [ext_resource type="Texture2D" uid="uid://nwkx58sil3vm" path="res://button create.png" id="4_spiyi"]
+[ext_resource type="PackedScene" uid="uid://dexpc7kg0foq0" path="res://Inventory space.tscn" id="6_vocn0"]
 
 [sub_resource type="Animation" id="Animation_88whm"]
 resource_name = "1(tool)"
@@ -90,17 +91,16 @@ _data = {
 "5(weapons)": SubResource("Animation_t6aop")
 }
 
-[node name="Node2D" type="Node2D"]
+[node name="Inventory" type="Node2D"]
 script = ExtResource("1_1r22b")
 
 [node name="Test" type="Sprite2D" parent="."]
-position = Vector2(402, 322)
+position = Vector2(463, 323)
 scale = Vector2(917, 432)
 texture = ExtResource("1_vsmjq")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="NewInventory" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(5, 95)
 scale = Vector2(2.4125, 2.54688)
 texture = ExtResource("2_apqh6")
@@ -117,7 +117,6 @@ position = Vector2(82, 127)
 scale = Vector2(3.38563, 3.01611)
 texture = ExtResource("3_aq36e")
 hframes = 5
-frame = 3
 
 [node name="Label" type="Label" parent="."]
 offset_left = 215.0
@@ -140,5 +139,9 @@ libraries = {
 "": SubResource("AnimationLibrary_la6qj")
 }
 autoplay = "1(tool)"
+
+[node name="inventory space" parent="." instance=ExtResource("6_vocn0")]
+position = Vector2(-310, 163)
+scale = Vector2(2.19022, 2.3269)
 
 [connection signal="value_changed" from="HScrollBar" to="." method="_on_h_scroll_bar_value_changed"]
