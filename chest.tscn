@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://clslgbmhwwb5h"]
 
-[ext_resource type="Script" path="res://Chest.gd" id="1_mo6yp"]
+[ext_resource type="Script" path="res://FishChest.gd" id="1_45uj5"]
 [ext_resource type="Texture2D" uid="uid://m8mmwyyvvvr3" path="res://chest.png" id="2_5lsrh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_08sxu"]
@@ -68,7 +68,7 @@ _data = {
 }
 
 [node name="Chest" type="Node2D" groups=["chest"]]
-script = ExtResource("1_mo6yp")
+script = ExtResource("1_45uj5")
 
 [node name="Chest" type="Sprite2D" parent="."]
 texture_filter = 1

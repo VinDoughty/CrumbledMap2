@@ -1,0 +1,24 @@
+{ "frames": {
+   "lava key.ase": {
+    "frame": { "x": 0, "y": 0, "w": 20, "h": 14 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 20, "h": 14 },
+    "sourceSize": { "w": 20, "h": 14 },
+    "duration": 100
+   }
+ },
+ "meta": {
+  "app": "https://github.com/LibreSprite/LibreSprite/",
+  "version": "1.1-dev",
+  "image": "C:\\Users\\vindo\\OneDrive\\Documents\\GitHub\\CrumbledMap2\\keys\\lava key.png",
+  "format": "RGBA8888",
+  "size": { "w": 20, "h": 14 },
+  "scale": "1",
+  "frameTags": [
+  ],
+  "layers": [
+   { "name": "Layer 1", "opacity": 255, "blendMode": "normal" }
+  ]
+ }
+}
