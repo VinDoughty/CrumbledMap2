@@ -7,6 +7,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	$ProgressBar2.value = 100 * health / max_health
+	pass
 
 

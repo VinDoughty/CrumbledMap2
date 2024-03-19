@@ -1,11 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bnn84jd04p2m"]
+[gd_scene load_steps=5 format=3 uid="uid://bnn84jd04p2m"]
 
 [ext_resource type="PackedScene" uid="uid://b0vrfpcb3b7x1" path="res://Enemy stuff/Grassbug.tscn" id="1_daytl"]
 [ext_resource type="Texture2D" uid="uid://g4exb8f0evxa" path="res://test.png" id="2_bmmlp"]
 [ext_resource type="Script" path="res://boss1.gd" id="2_neo4l"]
 [ext_resource type="Texture2D" uid="uid://b3ahncr0jphn4" path="res://boss.png" id="2_xk01u"]
-
-[sub_resource type="Theme" id="Theme_2c86g"]
 
 [node name="Grassbug" instance=ExtResource("1_daytl")]
 scale = Vector2(1.804, 1.698)
@@ -32,23 +30,7 @@ offset_right = 99.3348
 offset_bottom = -18.3475
 rotation = 2.72687
 
-[node name="ProgressBar2" type="ProgressBar" parent="." index="6"]
-modulate = Color(1, 0, 0.301961, 1)
-self_modulate = Color(0.784314, 0, 0, 1)
-visibility_layer = 4
-offset_left = -131.929
-offset_top = -44.7585
-offset_right = -127.929
-offset_bottom = -17.7585
-rotation = -6.28319
-scale = Vector2(111.919, 1.07714)
-theme = SubResource("Theme_2c86g")
-step = 100.0
-value = 100.0
-fill_mode = 1
-show_percentage = false
-
-[node name="Boss" type="Sprite2D" parent="." index="7"]
+[node name="Boss" type="Sprite2D" parent="." index="6"]
 texture_filter = 1
 position = Vector2(27.1619, -22.9682)
 scale = Vector2(0.310696, 0.328364)

@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://poxybd07m3nu"]
+
+[ext_resource type="Texture2D" uid="uid://bh7wdgnbx7wvq" path="res://fish.png" id="1_ygj5i"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wkbr1"]
+
+[sub_resource type="Animation" id="Animation_i8qtl"]
+resource_name = "move"
+length = 1.37
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fish:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fish:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.1, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(40, 30), Vector2(60, -21), Vector2(-60, 1.667)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n1r3n"]
+_data = {
+"move": SubResource("Animation_i8qtl")
+}
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Fish" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(42.0485, 24.7763)
+texture = ExtResource("1_ygj5i")
+hframes = 4
+frame = 2
+
+[node name="Area2D" type="Area2D" parent="Fish"]
+position = Vector2(-2.70324, 0.946133)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fish/Area2D"]
+position = Vector2(8.21989, 0.941357)
+shape = SubResource("CircleShape2D_wkbr1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_n1r3n")
+}
+autoplay = "move"

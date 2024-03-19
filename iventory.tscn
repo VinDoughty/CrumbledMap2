@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://dqqo81egls7ty"]
+[gd_scene load_steps=50 format=3 uid="uid://dqqo81egls7ty"]
 
 [ext_resource type="Script" path="res://iventory.gd" id="1_1r22b"]
 [ext_resource type="Texture2D" uid="uid://g4exb8f0evxa" path="res://test.png" id="1_vsmjq"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://m2e1g8wdsv02" path="res://Fish and eggs.png" id="10_yyxvg"]
 [ext_resource type="Texture2D" uid="uid://ljjwkhmxy3" path="res://fruit smoothie.png" id="11_2rknd"]
 [ext_resource type="Texture2D" uid="uid://d0wledhffxtef" path="res://pickaxe.png" id="12_hfgo2"]
+[ext_resource type="Texture2D" uid="uid://hmtc5f6xm80l" path="res://cookie.png" id="12_lkuin"]
 [ext_resource type="Texture2D" uid="uid://3pusb7dlq7rj" path="res://shovel.png" id="13_2f0ld"]
 [ext_resource type="Texture2D" uid="uid://cgvooy1jv8hit" path="res://Torch.png" id="14_8rfot"]
 [ext_resource type="Texture2D" uid="uid://d0pq48lwld67y" path="res://Axe.png" id="15_0doyb"]
@@ -40,6 +41,8 @@
 [ext_resource type="Texture2D" uid="uid://b0r88r6cbkaen" path="res://gold armor.png" id="38_h7yur"]
 [ext_resource type="Texture2D" uid="uid://ggvdyavhpky0" path="res://diamond armor.png" id="39_5n6i8"]
 [ext_resource type="Texture2D" uid="uid://b0gce4qdssv7q" path="res://green armor.png" id="40_gah4y"]
+[ext_resource type="Texture2D" uid="uid://blfxnmylb4a5h" path="res://bow.png" id="41_andyu"]
+[ext_resource type="Texture2D" uid="uid://jkccrnt4mhhx" path="res://arrow.png" id="42_mn1hu"]
 
 [sub_resource type="Animation" id="Animation_88whm"]
 resource_name = "1(tool)"
@@ -73,7 +76,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = false
-tracks/1/path = NodePath("FishCooked:visible")
+tracks/1/path = NodePath("food capsule/FishCooked:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -164,7 +167,7 @@ position = Vector2(82, 127)
 scale = Vector2(3.38563, 3.01611)
 texture = ExtResource("3_aq36e")
 hframes = 5
-frame = 4
+frame = 1
 
 [node name="Label" type="Label" parent="."]
 offset_left = 215.0
@@ -192,230 +195,244 @@ autoplay = "1(tool)"
 position = Vector2(-310, 163)
 scale = Vector2(2.19022, 2.3269)
 
-[node name="FishCooked" type="Sprite2D" parent="."]
-visible = false
+[node name="inventory space2" parent="." instance=ExtResource("6_vocn0")]
+position = Vector2(-237, 163)
+scale = Vector2(2.19022, 2.3269)
+
+[node name="food capsule" type="Node2D" parent="."]
+
+[node name="FishCooked" type="Sprite2D" parent="food capsule"]
 texture_filter = 1
 position = Vector2(-334, -155)
 scale = Vector2(2.78125, 2.625)
 texture = ExtResource("7_3tqrs")
 
-[node name="Foodapple" type="Sprite2D" parent="."]
-visible = false
+[node name="Foodapple" type="Sprite2D" parent="food capsule"]
 texture_filter = 1
 position = Vector2(-230, -155)
 scale = Vector2(3, 2.8125)
 texture = ExtResource("8_ph5c5")
 
-[node name="GrassbugSteakAndEggs" type="Sprite2D" parent="."]
-visible = false
+[node name="GrassbugSteakAndEggs" type="Sprite2D" parent="food capsule"]
 texture_filter = 1
 position = Vector2(-94, -149)
 scale = Vector2(2.23958, 2.10417)
 texture = ExtResource("9_xecg6")
 
-[node name="FishAndEggs" type="Sprite2D" parent="."]
-visible = false
+[node name="FishAndEggs" type="Sprite2D" parent="food capsule"]
 texture_filter = 1
 position = Vector2(-447, -60)
 scale = Vector2(2.29167, 2.04167)
 texture = ExtResource("10_yyxvg")
 
-[node name="FruitSmoothie" type="Sprite2D" parent="."]
-visible = false
+[node name="FruitSmoothie" type="Sprite2D" parent="food capsule"]
 texture_filter = 1
 position = Vector2(-289, -62)
 scale = Vector2(1.77083, 1.97917)
 texture = ExtResource("11_2rknd")
 
-[node name="Pickaxe" type="Sprite2D" parent="."]
+[node name="Cookie" type="Sprite2D" parent="food capsule"]
+texture_filter = 1
+position = Vector2(-192.5, -58.5)
+scale = Vector2(1.60417, 1.64583)
+texture = ExtResource("12_lkuin")
+
+[node name="tool capsule" type="Node2D" parent="."]
 visible = false
+
+[node name="Pickaxe" type="Sprite2D" parent="tool capsule"]
 texture_filter = 1
 position = Vector2(-483, -80)
 scale = Vector2(3.09375, 2.47917)
 texture = ExtResource("12_hfgo2")
 
-[node name="Shovel" type="Sprite2D" parent="."]
-visible = false
+[node name="Shovel" type="Sprite2D" parent="tool capsule"]
 texture_filter = 1
 position = Vector2(-370, -76)
 scale = Vector2(3.23437, 2.61458)
 texture = ExtResource("13_2f0ld")
 
-[node name="Torch" type="Sprite2D" parent="."]
-visible = false
+[node name="Torch" type="Sprite2D" parent="tool capsule"]
 texture_filter = 1
 position = Vector2(-248.5, -71)
 scale = Vector2(2.59375, 2.25)
 texture = ExtResource("14_8rfot")
 
-[node name="Axe" type="Sprite2D" parent="."]
-visible = false
+[node name="Axe" type="Sprite2D" parent="tool capsule"]
 texture_filter = 1
 position = Vector2(-133, -81)
 scale = Vector2(1.71875, 2.10417)
 texture = ExtResource("15_0doyb")
 
-[node name="Hammer" type="Sprite2D" parent="."]
-visible = false
+[node name="Hammer" type="Sprite2D" parent="tool capsule"]
 texture_filter = 1
 position = Vector2(-21, -78)
 scale = Vector2(1.84375, 2.35417)
 texture = ExtResource("16_oghbu")
 
-[node name="BarOfIron" type="Sprite2D" parent="."]
+[node name="material capsule" type="Node2D" parent="."]
 visible = false
+
+[node name="BarOfIron" type="Sprite2D" parent="material capsule"]
 texture_filter = 1
 position = Vector2(-446, -89)
 scale = Vector2(4, 4)
 texture = ExtResource("17_iiy8x")
 
-[node name="BarOfGold" type="Sprite2D" parent="."]
-visible = false
+[node name="BarOfGold" type="Sprite2D" parent="material capsule"]
 texture_filter = 1
 position = Vector2(-307, -88)
 scale = Vector2(4, 4)
 texture = ExtResource("18_ftxr5")
 
-[node name="BarOfDiamond" type="Sprite2D" parent="."]
-visible = false
+[node name="BarOfDiamond" type="Sprite2D" parent="material capsule"]
 texture_filter = 1
 position = Vector2(-157, -95)
 scale = Vector2(4, 4)
 texture = ExtResource("19_nbo0u")
 
-[node name="BarOfGreenDiamond" type="Sprite2D" parent="."]
-visible = false
+[node name="BarOfGreenDiamond" type="Sprite2D" parent="material capsule"]
 texture_filter = 1
 position = Vector2(15, -96)
 scale = Vector2(4, 4)
 texture = ExtResource("20_q4ihp")
 
-[node name="ForestKey" type="Sprite2D" parent="."]
+[node name="key capsule" type="Node2D" parent="."]
 visible = false
+
+[node name="ForestKey" type="Sprite2D" parent="key capsule"]
 texture_filter = 1
 position = Vector2(-455, -99)
 scale = Vector2(4.54688, 4.1875)
 texture = ExtResource("21_8i67t")
 
-[node name="IceKey" type="Sprite2D" parent="."]
-visible = false
+[node name="IceKey" type="Sprite2D" parent="key capsule"]
 texture_filter = 1
 position = Vector2(-350.375, -94.125)
 scale = Vector2(4.33594, 4.13281)
 texture = ExtResource("22_gh5i8")
 
-[node name="LavaKey" type="Sprite2D" parent="."]
-visible = false
+[node name="LavaKey" type="Sprite2D" parent="key capsule"]
 texture_filter = 1
 position = Vector2(-254.5, -108.5)
 scale = Vector2(4.35, 4.21429)
 texture = ExtResource("23_j5odd")
 
-[node name="DesertKey" type="Sprite2D" parent="."]
-visible = false
+[node name="DesertKey" type="Sprite2D" parent="key capsule"]
 texture_filter = 1
 position = Vector2(-161.25, -107.25)
 scale = Vector2(3.525, 4.03571)
 texture = ExtResource("24_1hll5")
 
-[node name="DarkKey" type="Sprite2D" parent="."]
-visible = false
+[node name="DarkKey" type="Sprite2D" parent="key capsule"]
 texture_filter = 1
 position = Vector2(-64, -101)
 scale = Vector2(4.075, 3.75)
 texture = ExtResource("25_5hsqt")
 
-[node name="LightbugKey" type="Sprite2D" parent="."]
-visible = false
+[node name="LightbugKey" type="Sprite2D" parent="key capsule"]
 texture_filter = 1
 position = Vector2(34, -101)
 scale = Vector2(4.05, 4.21429)
 texture = ExtResource("26_puaxg")
 
-[node name="WaterKey" type="Sprite2D" parent="."]
-visible = false
+[node name="WaterKey" type="Sprite2D" parent="key capsule"]
 texture_filter = 1
 position = Vector2(-305, -18.5)
 scale = Vector2(4.6, 4.64286)
 texture = ExtResource("27_5r3u4")
 
-[node name="BossKey" type="Sprite2D" parent="."]
-visible = false
+[node name="BossKey" type="Sprite2D" parent="key capsule"]
 texture_filter = 1
 position = Vector2(-164, -14)
 scale = Vector2(5.05, 4.35714)
 texture = ExtResource("28_yvjsy")
 
-[node name="IronBlade" type="Sprite2D" parent="."]
+[node name="Weapon capsule" type="Node2D" parent="."]
+visible = false
+
+[node name="IronBlade" type="Sprite2D" parent="Weapon capsule"]
 texture_filter = 1
-position = Vector2(-331, -151)
+position = Vector2(-335, -141)
 scale = Vector2(3.39063, 2.54167)
 texture = ExtResource("29_vedrr")
 
-[node name="GoldBlade" type="Sprite2D" parent="."]
+[node name="GoldBlade" type="Sprite2D" parent="Weapon capsule"]
 texture_filter = 1
-position = Vector2(-243, -145)
+position = Vector2(-256, -148)
 scale = Vector2(3.96875, 2.77083)
 texture = ExtResource("30_6284e")
 
-[node name="GreenDiamondBlade" type="Sprite2D" parent="."]
+[node name="GreenDiamondBlade" type="Sprite2D" parent="Weapon capsule"]
 texture_filter = 1
-position = Vector2(-83, -140)
-scale = Vector2(2.96094, 2.30208)
+position = Vector2(-101, -137)
+scale = Vector2(2.96094, 2.94271)
 texture = ExtResource("31_6vgw4")
 
-[node name="DiamondBladeNew" type="Sprite2D" parent="."]
+[node name="DiamondBladeNew" type="Sprite2D" parent="Weapon capsule"]
 texture_filter = 1
 position = Vector2(-169, -144)
 scale = Vector2(3.28125, 2.34375)
 texture = ExtResource("32_8qxfa")
 
-[node name="DiamondSheild" type="Sprite2D" parent="."]
+[node name="DiamondSheild" type="Sprite2D" parent="Weapon capsule"]
 texture_filter = 1
 position = Vector2(-333, -52)
 scale = Vector2(1.9375, 1.70833)
 texture = ExtResource("33_grt8i")
 
-[node name="GoldSheild" type="Sprite2D" parent="."]
+[node name="GoldSheild" type="Sprite2D" parent="Weapon capsule"]
 texture_filter = 1
 position = Vector2(-403, -48)
 scale = Vector2(2.5625, 2)
 texture = ExtResource("34_ihfd4")
 
-[node name="IronSheild" type="Sprite2D" parent="."]
+[node name="IronSheild" type="Sprite2D" parent="Weapon capsule"]
 texture_filter = 1
 position = Vector2(-486, -54)
 scale = Vector2(2.65625, 1.95833)
 texture = ExtResource("35_jytqc")
 
-[node name="GreenSheild" type="Sprite2D" parent="."]
+[node name="GreenSheild" type="Sprite2D" parent="Weapon capsule"]
 texture_filter = 1
 position = Vector2(-261, -47)
 scale = Vector2(2.28125, 2.10417)
 texture = ExtResource("36_gx5i8")
 
-[node name="IronArmor" type="Sprite2D" parent="."]
+[node name="IronArmor" type="Sprite2D" parent="Weapon capsule"]
 texture_filter = 1
 position = Vector2(-38, -140)
 scale = Vector2(1.5, 1.375)
 texture = ExtResource("37_v5fuo")
 
-[node name="GoldArmor" type="Sprite2D" parent="."]
+[node name="GoldArmor" type="Sprite2D" parent="Weapon capsule"]
 texture_filter = 1
 position = Vector2(-6, -137)
 scale = Vector2(1.1875, 1.29167)
 texture = ExtResource("38_h7yur")
 
-[node name="DiamondArmor" type="Sprite2D" parent="."]
+[node name="DiamondArmor" type="Sprite2D" parent="Weapon capsule"]
 texture_filter = 1
 position = Vector2(23.5, -140.5)
 scale = Vector2(1.09375, 1.3125)
 texture = ExtResource("39_5n6i8")
 
-[node name="GreenArmor" type="Sprite2D" parent="."]
+[node name="GreenArmor" type="Sprite2D" parent="Weapon capsule"]
 texture_filter = 1
 position = Vector2(65, -142)
 scale = Vector2(1.34375, 1.25)
 texture = ExtResource("40_gah4y")
+
+[node name="Bow" type="Sprite2D" parent="Weapon capsule"]
+texture_filter = 1
+position = Vector2(-162, -37)
+scale = Vector2(3.21875, 2.16667)
+texture = ExtResource("41_andyu")
+
+[node name="Arrow" type="Sprite2D" parent="Weapon capsule"]
+texture_filter = 1
+position = Vector2(-81, -21)
+scale = Vector2(1.78125, 2)
+texture = ExtResource("42_mn1hu")
 
 [connection signal="value_changed" from="HScrollBar" to="." method="_on_h_scroll_bar_value_changed"]

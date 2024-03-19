@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c7bgv101aa7cm"]
+[gd_scene load_steps=9 format=3 uid="uid://c7bgv101aa7cm"]
 
 [ext_resource type="Texture2D" uid="uid://dmoufkwiqpqlu" path="res://grass.png" id="1"]
 [ext_resource type="PackedScene" uid="uid://ck07ddw077t14" path="res://player stuff/Yinou.tscn" id="2_vhhic"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dph7hhv1apjy4" path="res://Platform.tscn" id="4_hic2b"]
 [ext_resource type="PackedScene" uid="uid://clslgbmhwwb5h" path="res://chest.tscn" id="5_6dypq"]
 [ext_resource type="PackedScene" uid="uid://bnn84jd04p2m" path="res://1st_boss.tscn" id="6_v3bvu"]
+[ext_resource type="Texture2D" uid="uid://j8auo0kdq37s" path="res://lake.png" id="7_khw5y"]
+[ext_resource type="PackedScene" uid="uid://poxybd07m3nu" path="res://fish.tscn" id="8_foq5f"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -60,8 +62,14 @@ scale = Vector2(1.2128, 0.902435)
 position = Vector2(4, 109)
 scale = Vector2(10.5174, 0.319827)
 
+[node name="Lake" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(238.25, 44)
+scale = Vector2(2.69792, 1.70833)
+texture = ExtResource("7_khw5y")
+
 [node name="Player" parent="." instance=ExtResource("2_vhhic")]
-position = Vector2(9, 2)
+position = Vector2(10, 5)
 
 [node name="Label" type="Label" parent="."]
 offset_left = -56.0
@@ -83,6 +91,32 @@ custom_minimum_size = Vector2(0, 0)
 
 [node name="Grassbug3" parent="." instance=ExtResource("3_1nmjt")]
 position = Vector2(-131, 42)
+
+[node name="Node2D9" parent="." instance=ExtResource("8_foq5f")]
+texture_filter = 1
+position = Vector2(191, 50)
+scale = Vector2(0.286974, 0.274335)
+
+[node name="Node2D10" parent="Node2D9" instance=ExtResource("8_foq5f")]
+position = Vector2(48.7848, -47.3874)
+scale = Vector2(0.955806, 0.928256)
+
+[node name="Node2D11" parent="Node2D9/Node2D10" instance=ExtResource("8_foq5f")]
+position = Vector2(21.8745, 66.7576)
+scale = Vector2(1.02225, 1.13802)
+
+[node name="Node2D10" parent="." instance=ExtResource("8_foq5f")]
+texture_filter = 1
+position = Vector2(241, 32)
+scale = Vector2(0.286974, 0.274335)
+
+[node name="Node2D10" parent="Node2D10" instance=ExtResource("8_foq5f")]
+position = Vector2(48.7848, -47.3874)
+scale = Vector2(0.955806, 0.928256)
+
+[node name="Node2D11" parent="Node2D10/Node2D10" instance=ExtResource("8_foq5f")]
+position = Vector2(21.8745, 66.7576)
+scale = Vector2(1.02225, 1.13802)
 
 [connection signal="area_entered" from="Chest/ChestArea2D" to="Player/CharacterBody2D" method="_on_chest_area_2d_area_entered"]
 
