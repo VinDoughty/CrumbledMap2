@@ -69,7 +69,7 @@ scale = Vector2(2.69792, 1.70833)
 texture = ExtResource("7_khw5y")
 
 [node name="Player" parent="." instance=ExtResource("2_vhhic")]
-position = Vector2(10, 5)
+position = Vector2(100, 45)
 
 [node name="Label" type="Label" parent="."]
 offset_left = -56.0

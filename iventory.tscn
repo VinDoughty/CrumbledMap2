@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://dqqo81egls7ty"]
+[gd_scene load_steps=51 format=3 uid="uid://dqqo81egls7ty"]
 
 [ext_resource type="Script" path="res://iventory.gd" id="1_1r22b"]
 [ext_resource type="Texture2D" uid="uid://g4exb8f0evxa" path="res://test.png" id="1_vsmjq"]
@@ -43,6 +43,7 @@
 [ext_resource type="Texture2D" uid="uid://b0gce4qdssv7q" path="res://green armor.png" id="40_gah4y"]
 [ext_resource type="Texture2D" uid="uid://blfxnmylb4a5h" path="res://bow.png" id="41_andyu"]
 [ext_resource type="Texture2D" uid="uid://jkccrnt4mhhx" path="res://arrow.png" id="42_mn1hu"]
+[ext_resource type="Texture2D" uid="uid://b7lv01j5f52sn" path="res://FishcookedSpace-sheet.png" id="44_2pnfl"]
 
 [sub_resource type="Animation" id="Animation_88whm"]
 resource_name = "1(tool)"
@@ -154,6 +155,123 @@ position = Vector2(5, 95)
 scale = Vector2(2.4125, 2.54688)
 texture = ExtResource("2_apqh6")
 
+[node name="GridContainer" type="GridContainer" parent="NewInventory"]
+offset_left = -145.0
+offset_top = 12.0
+offset_right = 580.0
+offset_bottom = 254.0
+theme_override_constants/h_separation = 1
+theme_override_constants/v_separation = 1
+columns = 10
+
+[node name="PanelContainer3" type="PanelContainer" parent="NewInventory/GridContainer"]
+custom_minimum_size = Vector2(29, 29)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NewInventory/GridContainer/PanelContainer3"]
+layout_mode = 2
+texture = ExtResource("44_2pnfl")
+expand_mode = 2
+
+[node name="PanelContainer4" type="PanelContainer" parent="NewInventory/GridContainer"]
+custom_minimum_size = Vector2(29, 29)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NewInventory/GridContainer/PanelContainer4"]
+layout_mode = 2
+texture = ExtResource("44_2pnfl")
+expand_mode = 2
+
+[node name="PanelContainer5" type="PanelContainer" parent="NewInventory/GridContainer"]
+custom_minimum_size = Vector2(29, 29)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NewInventory/GridContainer/PanelContainer5"]
+layout_mode = 2
+texture = ExtResource("44_2pnfl")
+expand_mode = 2
+
+[node name="PanelContainer6" type="PanelContainer" parent="NewInventory/GridContainer"]
+custom_minimum_size = Vector2(29, 29)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NewInventory/GridContainer/PanelContainer6"]
+layout_mode = 2
+texture = ExtResource("44_2pnfl")
+expand_mode = 2
+
+[node name="PanelContainer7" type="PanelContainer" parent="NewInventory/GridContainer"]
+custom_minimum_size = Vector2(29, 29)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NewInventory/GridContainer/PanelContainer7"]
+layout_mode = 2
+texture = ExtResource("44_2pnfl")
+expand_mode = 2
+
+[node name="PanelContainer8" type="PanelContainer" parent="NewInventory/GridContainer"]
+custom_minimum_size = Vector2(29, 29)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NewInventory/GridContainer/PanelContainer8"]
+layout_mode = 2
+texture = ExtResource("44_2pnfl")
+expand_mode = 2
+
+[node name="PanelContainer9" type="PanelContainer" parent="NewInventory/GridContainer"]
+custom_minimum_size = Vector2(29, 29)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NewInventory/GridContainer/PanelContainer9"]
+layout_mode = 2
+texture = ExtResource("44_2pnfl")
+expand_mode = 2
+
+[node name="PanelContainer10" type="PanelContainer" parent="NewInventory/GridContainer"]
+custom_minimum_size = Vector2(29, 29)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NewInventory/GridContainer/PanelContainer10"]
+layout_mode = 2
+texture = ExtResource("44_2pnfl")
+expand_mode = 2
+
+[node name="PanelContainer11" type="PanelContainer" parent="NewInventory/GridContainer"]
+custom_minimum_size = Vector2(29, 29)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NewInventory/GridContainer/PanelContainer11"]
+layout_mode = 2
+texture = ExtResource("44_2pnfl")
+expand_mode = 2
+
+[node name="PanelContainer12" type="PanelContainer" parent="NewInventory/GridContainer"]
+custom_minimum_size = Vector2(29, 29)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NewInventory/GridContainer/PanelContainer12"]
+layout_mode = 2
+texture = ExtResource("44_2pnfl")
+expand_mode = 2
+
+[node name="PanelContainer13" type="PanelContainer" parent="NewInventory/GridContainer"]
+custom_minimum_size = Vector2(29, 29)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NewInventory/GridContainer/PanelContainer13"]
+layout_mode = 2
+texture = ExtResource("44_2pnfl")
+expand_mode = 2
+
+[node name="PanelContainer14" type="PanelContainer" parent="NewInventory/GridContainer"]
+custom_minimum_size = Vector2(29, 29)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NewInventory/GridContainer/PanelContainer14"]
+layout_mode = 2
+texture = ExtResource("44_2pnfl")
+expand_mode = 2
+
 [node name="HScrollBar" type="HScrollBar" parent="."]
 offset_left = -518.0
 offset_top = 33.0
@@ -167,7 +285,6 @@ position = Vector2(82, 127)
 scale = Vector2(3.38563, 3.01611)
 texture = ExtResource("3_aq36e")
 hframes = 5
-frame = 1
 
 [node name="Label" type="Label" parent="."]
 offset_left = 215.0
@@ -192,11 +309,8 @@ libraries = {
 autoplay = "1(tool)"
 
 [node name="inventory space" parent="." instance=ExtResource("6_vocn0")]
+visible = false
 position = Vector2(-310, 163)
-scale = Vector2(2.19022, 2.3269)
-
-[node name="inventory space2" parent="." instance=ExtResource("6_vocn0")]
-position = Vector2(-237, 163)
 scale = Vector2(2.19022, 2.3269)
 
 [node name="food capsule" type="Node2D" parent="."]
@@ -233,7 +347,7 @@ texture = ExtResource("11_2rknd")
 
 [node name="Cookie" type="Sprite2D" parent="food capsule"]
 texture_filter = 1
-position = Vector2(-192.5, -58.5)
+position = Vector2(-182, -59)
 scale = Vector2(1.60417, 1.64583)
 texture = ExtResource("12_lkuin")
 
@@ -435,4 +549,26 @@ position = Vector2(-81, -21)
 scale = Vector2(1.78125, 2)
 texture = ExtResource("42_mn1hu")
 
+[node name="PanelContainer" type="PanelContainer" parent="."]
+visible = false
+offset_left = -345.0
+offset_top = 125.0
+offset_right = 380.0
+offset_bottom = 367.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Your stuff"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="value_changed" from="HScrollBar" to="." method="_on_h_scroll_bar_value_changed"]
+
+[editable path="inventory space"]

@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://poxybd07m3nu"]
+[gd_scene load_steps=6 format=3 uid="uid://poxybd07m3nu"]
 
+[ext_resource type="Script" path="res://fish.gd" id="1_gdxh3"]
 [ext_resource type="Texture2D" uid="uid://bh7wdgnbx7wvq" path="res://fish.png" id="1_ygj5i"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wkbr1"]
@@ -39,6 +40,7 @@ _data = {
 }
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_gdxh3")
 
 [node name="Fish" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -49,9 +51,11 @@ frame = 2
 
 [node name="Area2D" type="Area2D" parent="Fish"]
 position = Vector2(-2.70324, 0.946133)
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fish/Area2D"]
-position = Vector2(8.21989, 0.941357)
+position = Vector2(8.65474, 1.27757)
 shape = SubResource("CircleShape2D_wkbr1")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -59,3 +63,5 @@ libraries = {
 "": SubResource("AnimationLibrary_n1r3n")
 }
 autoplay = "move"
+
+[connection signal="area_entered" from="Fish/Area2D" to="." method="_on_area_2d_area_entered"]
