@@ -44,6 +44,15 @@ _data = {
 "up": SubResource("2")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rwii4"]
+size = Vector2(19.6201, 20.2144)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e8mm3"]
+size = Vector2(14.8687, 17.2418)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gnge2"]
+radius = 9.84365
+
 [sub_resource type="Animation" id="Animation_n0c7b"]
 resource_name = "hit"
 length = 1.1
@@ -77,52 +86,33 @@ _data = {
 "hit": SubResource("Animation_n0c7b")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rwii4"]
-size = Vector2(19.6201, 20.2144)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e8mm3"]
-size = Vector2(14.8687, 17.2418)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_gnge2"]
-radius = 9.84365
-
-[node name="Player" type="Node2D"]
-texture_filter = 1
-scale = Vector2(0.363822, 0.349291)
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["Player"]]
-scale = Vector2(1, 1.186)
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["Player"]]
+scale = Vector2(0.364, 0.432)
 collision_layer = 5
 script = ExtResource("2")
 
-[node name="YinouSheet" type="Sprite2D" parent="CharacterBody2D"]
+[node name="YinouSheet" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(2.25702, -1.55343)
 texture = ExtResource("1")
 hframes = 2
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_c26su")
 }
 
-[node name="AnimationAttackPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
-root_node = NodePath("../..")
-libraries = {
-"": SubResource("AnimationLibrary_w417y")
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.692766, 1.87747)
 scale = Vector2(1, 1.77246)
 shape = SubResource("RectangleShape2D_rwii4")
 debug_color = Color(0.996078, 0, 0.152941, 0.419608)
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+[node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(10, 10)
 
-[node name="HealthBar" type="ProgressBar" parent="CharacterBody2D/Camera2D"]
+[node name="HealthBar" type="ProgressBar" parent="Camera2D"]
 modulate = Color(0.141176, 1, 0.466667, 1)
 self_modulate = Color(0.780392, 0.780392, 0.780392, 1)
 offset_left = -153.921
@@ -132,13 +122,13 @@ offset_bottom = -47.8324
 scale = Vector2(1.0073, 0.684069)
 value = 100.0
 
-[node name="Heart" type="Sprite2D" parent="CharacterBody2D/Camera2D/HealthBar"]
+[node name="Heart" type="Sprite2D" parent="Camera2D/HealthBar"]
 texture_filter = 1
 position = Vector2(62.7593, 14.1152)
 scale = Vector2(0.674541, 0.882202)
 texture = ExtResource("3_hul3j")
 
-[node name="HungerBar" type="ProgressBar" parent="CharacterBody2D/Camera2D"]
+[node name="HungerBar" type="ProgressBar" parent="Camera2D"]
 modulate = Color(0.960784, 0.247059, 0, 1)
 self_modulate = Color(0.780392, 0.780392, 0.780392, 1)
 offset_left = -153.921
@@ -148,29 +138,29 @@ offset_bottom = -26.1069
 scale = Vector2(1.0073, 0.684069)
 value = 100.0
 
-[node name="Apple" type="Sprite2D" parent="CharacterBody2D/Camera2D/HungerBar"]
+[node name="Apple" type="Sprite2D" parent="Camera2D/HungerBar"]
 texture_filter = 1
 position = Vector2(62.7593, 14.1152)
 scale = Vector2(0.496374, 0.61629)
 texture = ExtResource("4_iwnrh")
 
-[node name="Inventory" parent="CharacterBody2D/Camera2D" instance=ExtResource("7_wya43")]
+[node name="Inventory" parent="Camera2D" instance=ExtResource("7_wya43")]
 visible = false
 z_index = 3
 position = Vector2(-2.74857, -16.8976)
 scale = Vector2(0.19, 0.160202)
 
-[node name="Area2D" type="Area2D" parent="CharacterBody2D" groups=["attack"]]
+[node name="Area2D" type="Area2D" parent="." groups=["attack"]]
 collision_layer = 2
 collision_mask = 2
 
-[node name="AttackCollider" type="CollisionShape2D" parent="CharacterBody2D/Area2D" groups=["attack"]]
+[node name="AttackCollider" type="CollisionShape2D" parent="Area2D" groups=["attack"]]
 position = Vector2(16.4916, 2.41395)
 shape = SubResource("RectangleShape2D_e8mm3")
 disabled = true
 debug_color = Color(0.423529, 0.603922, 0, 0.419608)
 
-[node name="Attack" type="Sprite2D" parent="CharacterBody2D/Area2D/AttackCollider"]
+[node name="Attack" type="Sprite2D" parent="Area2D/AttackCollider"]
 position = Vector2(-5.4972, 2.41394)
 rotation = 3.14159
 scale = Vector2(0.869056, -0.84317)
@@ -178,28 +168,38 @@ texture = ExtResource("5_3la2l")
 hframes = 11
 frame = 10
 
-[node name="FishCooked" type="Sprite2D" parent="CharacterBody2D"]
+[node name="FishCooked" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(-108.832, -62.7626)
 scale = Vector2(0.91229, 0.84317)
 texture = ExtResource("6_kpw0n")
 hframes = 5
 
-[node name="InteractArea2D" type="Area2D" parent="CharacterBody2D"]
+[node name="InteractArea2D" type="Area2D" parent="."]
 scale = Vector2(1, 0.84317)
 collision_layer = 16
 collision_mask = 16
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/InteractArea2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea2D"]
 scale = Vector2(1.55668, 2.86992)
 shape = SubResource("CircleShape2D_gnge2")
 debug_color = Color(0, 0.643137, 0.32549, 0.419608)
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Player" type="Node2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.363822, 0.349291)
+
+[node name="Timer" type="Timer" parent="Player"]
 wait_time = 3.0
 autostart = true
 
-[connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]
-[connection signal="area_entered" from="CharacterBody2D/InteractArea2D" to="CharacterBody2D" method="_on_interact_area_2d_area_entered"]
-[connection signal="area_exited" from="CharacterBody2D/InteractArea2D" to="CharacterBody2D" method="_on_interact_area_2d_area_exited"]
-[connection signal="timeout" from="Timer" to="CharacterBody2D" method="_on_timer_timeout"]
+[node name="AnimationAttackPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_w417y")
+}
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="area_entered" from="InteractArea2D" to="." method="_on_interact_area_2d_area_entered"]
+[connection signal="area_exited" from="InteractArea2D" to="." method="_on_interact_area_2d_area_exited"]
+[connection signal="timeout" from="Player/Timer" to="." method="_on_timer_timeout"]

@@ -21,6 +21,7 @@ func _process(delta):
 		
 	if Input.is_action_just_pressed("attack"):
 		$AnimationAttackPlayer.play("hit")
+		print("h")
 	if Input.is_action_just_pressed("inventory"):
 		$Camera2D/Inventory.visible = !$Camera2D/Inventory.visible
 	if Input.is_action_just_pressed("exit inventory"):

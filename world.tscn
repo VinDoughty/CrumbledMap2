@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c7bgv101aa7cm"]
+[gd_scene load_steps=10 format=3 uid="uid://c7bgv101aa7cm"]
 
 [ext_resource type="Texture2D" uid="uid://dmoufkwiqpqlu" path="res://grass.png" id="1"]
 [ext_resource type="PackedScene" uid="uid://ck07ddw077t14" path="res://player stuff/Yinou.tscn" id="2_vhhic"]
@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://bnn84jd04p2m" path="res://1st_boss.tscn" id="6_v3bvu"]
 [ext_resource type="Texture2D" uid="uid://j8auo0kdq37s" path="res://lake.png" id="7_khw5y"]
 [ext_resource type="PackedScene" uid="uid://poxybd07m3nu" path="res://fish.tscn" id="8_foq5f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4xhoa"]
+size = Vector2(227.925, 164.348)
 
 [node name="Node2D" type="Node2D"]
 
@@ -89,6 +92,11 @@ modulate = Color(0.815686, 0, 0, 1)
 self_modulate = Color(0.960784, 0, 0, 1)
 custom_minimum_size = Vector2(0, 0)
 
+[node name="CollisionShape2D" parent="Grassbug2/Area2D" index="0"]
+position = Vector2(0, 0)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_4xhoa")
+
 [node name="Grassbug3" parent="." instance=ExtResource("3_1nmjt")]
 position = Vector2(-131, 42)
 
@@ -117,8 +125,6 @@ scale = Vector2(0.955806, 0.928256)
 [node name="Node2D11" parent="Node2D10/Node2D10" instance=ExtResource("8_foq5f")]
 position = Vector2(21.8745, 66.7576)
 scale = Vector2(1.02225, 1.13802)
-
-[connection signal="area_entered" from="Chest/ChestArea2D" to="Player/CharacterBody2D" method="_on_chest_area_2d_area_entered"]
 
 [editable path="Grassbug"]
 [editable path="Chest"]
