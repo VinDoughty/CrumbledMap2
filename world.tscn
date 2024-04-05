@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c7bgv101aa7cm"]
+[gd_scene load_steps=11 format=3 uid="uid://c7bgv101aa7cm"]
 
 [ext_resource type="Texture2D" uid="uid://dmoufkwiqpqlu" path="res://grass.png" id="1"]
 [ext_resource type="PackedScene" uid="uid://ck07ddw077t14" path="res://player stuff/Yinou.tscn" id="2_vhhic"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bnn84jd04p2m" path="res://1st_boss.tscn" id="6_v3bvu"]
 [ext_resource type="Texture2D" uid="uid://j8auo0kdq37s" path="res://lake.png" id="7_khw5y"]
 [ext_resource type="PackedScene" uid="uid://poxybd07m3nu" path="res://fish.tscn" id="8_foq5f"]
+[ext_resource type="Texture2D" uid="uid://dljrscido0sw0" path="res://startcave.png" id="9_unwhj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4xhoa"]
 size = Vector2(227.925, 164.348)
@@ -21,8 +22,14 @@ scale = Vector2(33.6417, 26.7969)
 texture = ExtResource("1")
 metadata/_edit_lock_ = true
 
+[node name="Startcave" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(12, 1)
+scale = Vector2(1.08333, 1)
+texture = ExtResource("9_unwhj")
+
 [node name="Grassbug" parent="." instance=ExtResource("3_1nmjt")]
-position = Vector2(-37, -34)
+position = Vector2(-88, -35)
 
 [node name="Node2D" parent="." instance=ExtResource("4_hic2b")]
 position = Vector2(12, 22)
@@ -72,7 +79,7 @@ scale = Vector2(2.69792, 1.70833)
 texture = ExtResource("7_khw5y")
 
 [node name="Player" parent="." instance=ExtResource("2_vhhic")]
-position = Vector2(100, 45)
+position = Vector2(11, 8)
 
 [node name="Label" type="Label" parent="."]
 offset_left = -56.0

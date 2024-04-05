@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b0vrfpcb3b7x1"]
+[gd_scene load_steps=7 format=3 uid="uid://b0vrfpcb3b7x1"]
 
 [ext_resource type="Texture2D" uid="uid://c7a2reou43b83" path="res://Enemy stuff/GRASSBUG.png" id="1_1lybu"]
 [ext_resource type="Script" path="res://Enemy stuff/Enemy.gd" id="1_1wthr"]
@@ -8,6 +8,8 @@
 size = Vector2(22.7558, 24.5457)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bqhw6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wc2ip"]
 
 [node name="Grassbug" type="CharacterBody2D" groups=["enemy"]]
 scale = Vector2(0.351559, 0.325923)
@@ -45,5 +47,9 @@ position = Vector2(0, -3.06821)
 scale = Vector2(18.5057, 11.8767)
 shape = SubResource("CircleShape2D_bqhw6")
 debug_color = Color(0.694118, 0.458824, 0.498039, 0.419608)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wc2ip")
+debug_color = Color(0.976471, 0, 0.411765, 0.419608)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

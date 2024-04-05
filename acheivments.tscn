@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpqyp5nd15o7c"]
+
+[ext_resource type="Texture2D" uid="uid://g4exb8f0evxa" path="res://test.png" id="1_22utd"]
+[ext_resource type="Texture2D" uid="uid://d2a7nhddoin75" path="res://acheivment1.png" id="2_8xdd5"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Test" type="Sprite2D" parent="."]
+position = Vector2(850, 1495)
+scale = Vector2(564.75, 548.5)
+texture = ExtResource("1_22utd")
+
+[node name="Acheivment1" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(90, 16)
+texture = ExtResource("2_8xdd5")
+hframes = 2
+frame = 1

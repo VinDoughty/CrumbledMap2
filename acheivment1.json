@@ -1,0 +1,32 @@
+{ "frames": {
+   "acheivment1 0.ase": {
+    "frame": { "x": 0, "y": 0, "w": 180, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 180, "h": 32 },
+    "sourceSize": { "w": 180, "h": 32 },
+    "duration": 100
+   },
+   "acheivment1 1.ase": {
+    "frame": { "x": 180, "y": 0, "w": 180, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 180, "h": 32 },
+    "sourceSize": { "w": 180, "h": 32 },
+    "duration": 100
+   }
+ },
+ "meta": {
+  "app": "https://github.com/LibreSprite/LibreSprite/",
+  "version": "1.1-dev",
+  "image": "C:\\Users\\vindo\\OneDrive\\Documents\\GitHub\\CrumbledMap2\\acheivment1.png",
+  "format": "RGBA8888",
+  "size": { "w": 360, "h": 32 },
+  "scale": "1",
+  "frameTags": [
+  ],
+  "layers": [
+   { "name": "Layer 1", "opacity": 255, "blendMode": "normal" }
+  ]
+ }
+}

@@ -53,13 +53,13 @@ size = Vector2(14.8687, 17.2418)
 [sub_resource type="CircleShape2D" id="CircleShape2D_gnge2"]
 radius = 9.84365
 
-[sub_resource type="Animation" id="Animation_n0c7b"]
+[sub_resource type="Animation" id="Animation_ne5vg"]
 resource_name = "hit"
 length = 1.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CharacterBody2D/Area2D/AttackCollider/Attack:frame")
+tracks/0/path = NodePath("Area2D/AttackCollider/Attack:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -71,19 +71,19 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CharacterBody2D/Area2D/AttackCollider:disabled")
+tracks/1/path = NodePath("Area2D/AttackCollider:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.8),
+"times": PackedFloat32Array(0, 0.2, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [true, false, true]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_w417y"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_olbgp"]
 _data = {
-"hit": SubResource("Animation_n0c7b")
+"hit": SubResource("Animation_ne5vg")
 }
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["Player"]]
@@ -194,9 +194,8 @@ wait_time = 3.0
 autostart = true
 
 [node name="AnimationAttackPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../..")
 libraries = {
-"": SubResource("AnimationLibrary_w417y")
+"": SubResource("AnimationLibrary_olbgp")
 }
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
