@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxynnojsqd8f4"]
+
+[ext_resource type="Script" path="res://AchievementTrigger.gd" id="1_ct06t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gb8on"]
+size = Vector2(414.595, 20)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_ct06t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(254.763, -15)
+scale = Vector2(0.990057, 1)
+shape = SubResource("RectangleShape2D_gb8on")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

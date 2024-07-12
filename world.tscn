@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c7bgv101aa7cm"]
+[gd_scene load_steps=12 format=3 uid="uid://c7bgv101aa7cm"]
 
 [ext_resource type="Texture2D" uid="uid://dmoufkwiqpqlu" path="res://grass.png" id="1"]
 [ext_resource type="PackedScene" uid="uid://ck07ddw077t14" path="res://player stuff/Yinou.tscn" id="2_vhhic"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://j8auo0kdq37s" path="res://lake.png" id="7_khw5y"]
 [ext_resource type="PackedScene" uid="uid://poxybd07m3nu" path="res://fish.tscn" id="8_foq5f"]
 [ext_resource type="Texture2D" uid="uid://dljrscido0sw0" path="res://startcave.png" id="9_unwhj"]
+[ext_resource type="PackedScene" uid="uid://dxynnojsqd8f4" path="res://AchievementTrigger.tscn" id="10_6foq3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4xhoa"]
 size = Vector2(227.925, 164.348)
@@ -69,8 +70,8 @@ scale = Vector2(0.43299, 0.370787)
 scale = Vector2(1.2128, 0.902435)
 
 [node name="Node2D8" parent="." instance=ExtResource("4_hic2b")]
-position = Vector2(4, 109)
-scale = Vector2(10.5174, 0.319827)
+position = Vector2(219, 109)
+scale = Vector2(24.0374, 0.319827)
 
 [node name="Lake" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -90,7 +91,7 @@ scale = Vector2(0.21065, 0.217895)
 text = "Press z to open chests."
 
 [node name="Grassbug2" parent="." instance=ExtResource("6_v3bvu")]
-position = Vector2(254, -165)
+position = Vector2(817, -274)
 collision_layer = 1
 collision_mask = 1
 
@@ -132,6 +133,8 @@ scale = Vector2(0.955806, 0.928256)
 [node name="Node2D11" parent="Node2D10/Node2D10" instance=ExtResource("8_foq5f")]
 position = Vector2(21.8745, 66.7576)
 scale = Vector2(1.02225, 1.13802)
+
+[node name="Area2D" parent="." instance=ExtResource("10_6foq3")]
 
 [editable path="Grassbug"]
 [editable path="Chest"]
